@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my logo flex</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        body {
+            height: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .nav,
+        .feature,
+        .footer {
+            background-color: antiquewhite;
+            margin: 10px;
+            padding: 10px;
+
+        }
+
+        ul{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        a {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .column {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+            margin: 0 auto;
+            padding: 10px;
+        }
+        .item1,.item2,.item3{
+            flex-basis: 30%;
+            text-align: center;
+            background-color: aqua;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Logo</h1>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Products</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <section>
+        <div class="feature">
+            <p>Feature</p>
+        </div>
+        <div class="column" >
+            <div class="item1">
+                Column One
+            </div>
+            <div class="item2">
+                Column Two
+            </div>
+            <div class="item3">
+                Column Three
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+</body>
+
+</html>

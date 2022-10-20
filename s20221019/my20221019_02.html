@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習 flat</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        body {
+            margin: 0 auto;
+            padding: 0;
+            height: 960px;
+        }
+
+        .nav,
+        .feature,
+        .footer {
+            background-color: antiquewhite;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+
+        .footer {
+            clear: both;
+        }
+        .item{
+            background-color: #efefef;
+            width: 300px;
+            float:left;
+            margin:10px;
+            padding:10px;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="header">
+
+        <h1>Logo</h1>
+        <div class="nav">
+
+
+            <li><a href="#">Home </a></li>
+            <li><a href="#">Products </a></li>
+            <li><a href="#">Services </a></li>
+            <li><a href="#">About </a></li>
+            <li><a href="#">Contact </a></li>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="feature">
+            <p>Feature</p>
+        </div>
+        <div class="item ome">
+            <p>Column One</p>
+        </div>
+        <div class="item two">
+            <p>Column Two</p>
+        </div>
+        <div class="item tree">
+            <p>Column Three</p>
+        </div>
+    </div>
+    <footer class="footer">
+        @copyright 2022
+
+    </footer>
+</body>
+
+</html>
