@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="myText">Hello JS</h1>
+    <button id="myBtn">myBtn</button>
+
+
+
+    <!-- 放在/body 結束body 上一行 -->
+    <script>
+        // 跳出彈跳視窗 alert
+        alert('Hello JS');
+        // h1 變紅色
+        // 幫我把id#t的css的color設定為blue 
+        document.getElementById("myText").style.color = "blue";
+// myBtn的css顏色
+        document.getElementById("myBtn").style.color = "blue";
+        // addEventListener
+        // 事件監聽('click',後續動儘)
+        // 麥當勞('買大麥克',後續動作)
+        // 後續動作=>店員給我大麥克
+
+        // 後續動作語法function(){}語法
+        document.getElementById('myBtn').addEventListener('click',function(){
+            alert('bouch btn');
+        });
+    </script>
+</body>
+
+</html>
