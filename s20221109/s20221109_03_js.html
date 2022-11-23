@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- style 都放在head -->
+    <style>
+        /* 幫我把 id#myText 的css 的color 設定為紅色 */
+        #myText{
+            color: red;
+        }
+        .class1{
+            color: red;
+            color: red;
+            color: red;
+            color: red;
+        }
+        .class2{
+            color: red;
+            color: red;
+            color: red;
+            color: red;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1 id="myText">Hello JS</h1>
+    <!-- <button id="myBtn">myBtn</button> -->
+    <button  onclick="myFun();">myBtn</button>
+ 
+    
+    <!-- 放在/body 結束body 上一行 -->
+    <script>
+
+        function myFun(){
+            alert('hello myFun ok');
+        }
+
+        // 跳出彈跳視窗 alert
+        alert('Hello JS');
+        // 我要買麥當勞('大麥克');
+
+        // h1 變紅色
+        /* 幫我把 id#myText 的css 的color 設定為blue */
+        document.getElementById('myText').style.color="blue";
+
+        // myBtn的css的顏色 
+        document.getElementById('myBtn').style.color="blue";
+
+        // addEventListener
+        // 事件監聽('click',後續動作)
+
+        // 麥當勞('買大麥克',後續動作)
+        // 後續動作=>  
+        // function(){
+        // 店員給我大麥克
+        // }
+        
+        // 後續動作語法 function(){} 語法
+        
+
+        document.getElementById('myBtn').addEventListener('click',function(){
+            // alert('touch btn ok');
+            document.getElementById('myText').style.color="green";
+        });
+
+        
+        
+    </script>
+</body>
+</html>

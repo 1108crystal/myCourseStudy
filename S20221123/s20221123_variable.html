@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable 變數宣告</title>
+
+</head>
+<body>
+    
+
+
+
+</body>
+</html>
+
+
+<script>
+    var x="5",y="3",z="1",w=null;
+    a=x+y+z;
+    b=x-y-z;
+    c=w*55;
+    console.log("x+y+z=",a);
+    console.log("x-y-z=",b);
+    console.log("w*55=",c);
+</script>
+
+<script>
+    var x=2;
+    //定義cal 函數
+    function cal(){ 
+        var x=5,y=1;
+        console.log(x+y);//6
+
+    }
+    cal();
+    console.log(x);//2
+</script>
+
+
+<script>
+    var x=2;
+    function cal(){//定義cal 函數
+        x=5,y=1;//x是全域變數
+        console.log(x+y);//6
+    }
+    cal();//執行cal函數
+    console.log(x);//5
+    
+
+</script>
+
+<script>
+        // var let 
+        // var 全域變數的情況 function內可以有區域變數
+        var varX = 2; //外部varX 別人寫的
+        function cal() {
+            // console.log('ex varX', varX);
+            let varX = 5, varY = 1; //我們自己寫的
+            console.log('varX+varY', varX + varY);
+        }
+        cal();
+        console.log('varX', varX);
+
+</script>

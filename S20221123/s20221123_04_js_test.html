@@ -1,0 +1,104 @@
+<!-- 練習 -->
+<!-- input 1 100 -->
+<!-- input 2 10 -->
+<!-- input 3 + -->
+<!-- result 100 + 10 =110 -->
+
+<!-- input 1 100 -->
+<!-- input 2 10 -->
+<!-- input 3 + -->
+<!-- result 100 - 10 = 90 -->
+
+
+<!-- 寫先中文註解 在寫程式碼 -->
+
+<!--  需求 -> 邏輯 -> 流程圖 -> 中文註解 -> 程式砣 -> 重構 -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 練習</title>
+    <style>
+        table,tr,td{
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>練習</h1>
+
+    <h3>
+        input 1 100<BR>
+        input 2 10<BR>
+        input 3 +<BR>
+        result 100 + 10 =110<BR>
+            <BR>
+        input 1 100<BR>
+        input 2 10<BR>
+        input 3 +<BR>
+        result 100 - 10 = 90<BR>
+            <BR><BR>
+
+        寫先中文註解 在寫程式碼<BR>
+            <BR>
+        需求 -> 邏輯 -> 流程圖 -> 中文註解 -> 程式砣 -> 重構        <BR>
+    </h3>
+    <hr>
+    <table>
+        <tr>
+            <td>數值1</td>
+            <td>   運算(+-*/)   </td>
+            <td>數值2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="value_01" maxlength="6" size="5"></td>
+            <td><input type="text" id="value_02" maxlength="2" size="5"></td>
+            <td><input type="number" id="value_03" maxlength="6" size="5"></td>
+            <td><button type="button" id="myBtn" onclick="calculate();" >計算</button></td>
+        </tr>
+        
+    </table>
+    
+    
+    
+    <hr>
+    <h3><label id="result"></label></h3>
+    <script>
+        function calculate() {
+            const v1 = document.getElementById('value_01');
+            const v2 = document.getElementById('value_02');
+            const v3 = document.getElementById('value_03');
+            let resultInput = document.getElementById('result');
+            let str = v1.value + v2.value + v3.value;
+            switch (v2.value) {
+                case '+':
+                    result = parseInt(v1.value) + parseInt(v3.value);
+                    break;
+                case '-':
+                    result = parseInt(v1.value) - parseInt(v3.value);
+                    break;
+                case '*':
+                    result = parseInt(v1.value) * parseInt(v3.value);
+                    break;
+                case '/':
+                    result = parseInt(v1.value) / parseInt(v3.value);
+                    break;
+                default:
+                    result = "運算式錯誤!!!"
+                    break;
+            }
+            resultInput.textContent = str + " = " + result;
+        }
+    </script>
+</body>
+
+</html>

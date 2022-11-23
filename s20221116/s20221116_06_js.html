@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>Num1 = <span id="mySpan1">0</span> </p>
+    </div>
+    <div>
+        <p>Num2 = <span id="mySpan2">0</span></p>
+    </div>
+    <hr>
+    <div>
+        <p>sum = <span id="sum">0</span></p>
+    </div>
+
+    <button type="button" onclick="test();">testBtn</button>
+    <!-- 常見程式語言畫面清除 -->
+    <!-- 1. cls -->
+    <!-- 2. ctrl + l -->
+    <!-- 3. clear  -->
+
+    <!-- 常見執行畫面中斷 -->
+    <!-- 1. ctrl + c -->
+    <!-- 2. esc -->
+
+    <!-- 常見離開畫面 -->
+    <!-- exit -->
+
+
+    <script src="">
+
+    </script>
+
+    <script>
+        let sum = 0;
+
+        function test() {
+
+            let getNum1 = Number(prompt('num1?'));
+            let getNum2 = Number(prompt('num2?'));
+            // let getNum1 = parseFloat(prompt('num1?'));
+            // let getNum1 = parseInt(prompt('num1?'));
+            // let getNum2 = parseInt(prompt('num2?'));
+
+            // 常見變數狀態
+            // string
+            myText1 = 'test';
+            console.log('myText1', myText1);
+            console.log('myText1 typeof', typeof (myText1));
+
+            // number
+            myNum1 = 123;
+            myNum2 = 123.45;
+            console.log('myNum1', myNum1);
+            console.log('myNum1 typeof', typeof (myNum1));
+            console.log('myNum2', myNum2);
+            console.log('myNum2 typeof', typeof (myNum2));
+
+            // 小練習 prompt num1
+            // 小練習 prompt num2
+            const mySpan1 = document.getElementById('mySpan1');
+            const mySpan2 = document.getElementById('mySpan2');
+            const mySum = document.getElementById('sum');
+            // ====================
+            // 畫面顯示 num1 = xxx
+            // 畫面顯示 num2 = xxx
+            // 畫面顯示 num1 + num2 = xxx
+
+            // NaN not a number 如果文字 轉成數字
+            //   要記得轉型
+
+            
+            let sum = getNum1 + getNum2
+            console.log(sum);
+            mySpan1.textContent = getNum1;
+            mySpan2.textContent = getNum2;
+            mySum.textContent = sum;
+           
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+function helloMyJs(){
+    alert('helloMyJs');
+}

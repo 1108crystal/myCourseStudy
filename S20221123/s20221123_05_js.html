@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 變數的type
+        let x = "text"; //string
+        let y = 123; //nubmer
+        let z = false //boolean
+
+        // 查看變數型態
+        console.log('x typeof() => ', typeof (x));
+        console.log('y typeof() => ', typeof (y));
+        console.log('z typeof() => ', typeof (z));
+
+        // console.log => JS 按F12 可以查看console的資料
+
+        // 宣告變數
+        // let / const / var
+        // let
+        // 區域變數
+        let localNum = 11;
+        console.log('init localNum', localNum);
+        localNum = 5678;
+        console.log('localNum', localNum);
+
+        // const 常數
+        const constNum = 3.14;
+        console.log('init constNum', constNum);
+        // constNum = 123;
+        // Uncaught TypeError: Assignment to constant variable.
+        console.log('constNum', constNum);
+
+
+        //=============================================================================//
+        // var let 
+        // var 全域變數的情況 function內可以有區域變數
+        var varX = 2; //var 不在函數內的變數都屬於全域範圍變數，此程式文件內都可以使用此一變數
+        function cal() {
+            // console.log('ex varX', varX);//在 區域內，此變數一開始執行尚未宣告(如有執行時會發票錯誤)
+            let varX = 5, varY = 1; //區域變數，在這一個函數區域內可以使用此變數。
+            console.log('varX+varY', varX + varY);
+            varX=3;   //區域變數不會改變到 var 的全域變數
+        }
+        cal();
+       
+        console.log('varX', varX);
+        //=============================================================================//
+
+
+
+
+    </script>
+</body>
+
+</html>

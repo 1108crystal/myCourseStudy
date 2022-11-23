@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習 switch case 使用方式</title>
+</head>
+
+<body>
+    <label for="">請輸入您的姓名:<input type="text" id="myText"></label>
+    <button type="button" id="myBtn" onclick="getInputText();">myBtn</button>
+
+
+    <p id="result"></p>
+
+
+    <!-- 練習二 -->
+    <!-- promt 改成 input button -->
+    <script>
+
+
+        function getInputText() {
+
+            const resultInput = document.getElementById('result');
+            const textInput = document.getElementById('myText');
+            // const myBtn = document.getElementById('myBtn');
+
+            let inputTextData = textInput.value;
+            
+            console.log('inputTextData', inputTextData);
+
+            let getName = inputTextData;
+            let resultText = "";
+            switch (getName) {
+                case 'amy':
+                case 'bob':
+                case 'cat':
+                    resultText = `Hello ${getName} 您好 歡迎光臨`;
+                    break;
+                default:
+                    resultText = "Hello " + getName + " 您好  尚未註冊，請快註冊!";
+                    break;
+            }
+            resultInput.textContent = resultText;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
