@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- html -->
+    <input type="text" name="" id="myText" value="myText123">
+    <p id="myP">hello p tag</p>
+    
+
+    <script>
+        // js
+        // 綁定
+        const myPInput = document.getElementById('myP');
+        const myText = document.getElementById('myText');
+        console.log(myText);
+
+        // p tag
+        console.log('myPInput', myPInput);
+        myPInput.style.color = "red"; //改紅色字體
+        myPInput.textContent = "55688"; //改文字
+        myPInput.textContent = "55688"; //改文字
+
+        // input
+        let myTextData = myText.value;
+        console.log('myTextData',myTextData);
+        myText.value = "hello myText change value";
+        console.log('myTextData',myTextData);
+        
+        
+        
+        console.log('myTextData',myText.value);
+        myTextData = myText.value;
+        console.log('myTextData',myTextData);
+
+        // console.log('myPInput', myPInput);
+        // myPInput.style.color = "blue"; //改紅色字體
+        // myPInput.textContent = "12345"; //改文字
+        // console.log('myPInput', myPInput);
+
+        
+    </script>
+</body>
+
+</html>

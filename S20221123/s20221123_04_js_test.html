@@ -72,6 +72,8 @@
     
     <hr>
     <h3><label id="result"></label></h3>
+
+    <h3><label id="result02"></label></h3>
     <script>
         function calculate() {
             const v1 = document.getElementById('value_01');
@@ -97,6 +99,10 @@
                     break;
             }
             resultInput.textContent = str + " = " + result;
+
+
+            // let resultInput02 = document.getElementById('result02');
+            // resultInput02.textContent = str + " = " + parseInt("("+ str + ")");
         }
     </script>
 </body>
