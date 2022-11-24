@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td {
+            text-align: center;
+            border: 1px solid lightgrey;
+
+        }
+    </style>
+    <script>
+        function calFun() {
+            const NN = document.getElementById("show03");
+            const title = document.getElementById("showtitle03");
+            const num01 = document.getElementById("num01");
+            const num02 = document.getElementById("num02");
+            
+            title.textContent = `表格顯示 ${num01.value} * ${num02.value} 乘法表 input`;
+            strHtml_NN = '';
+            strHtml_NN = '<table >';//<tr><td></td></tr></table>';
+            strHtml_NN = strHtml_NN + '<tr>';
+            for (let i = 1; i <= num01.value; i++) {
+
+                strHtml_NN = strHtml_NN + '<td>';
+                for (let j = 1; j <= num02.value; j++) {
+                    let str = `${i} * ${j} = ${i * j} `;
+                    // 補0
+                    let str_i = (i.toString()).padStart(1, "0");
+                    let str_j = (j.toString()).padStart(1, "0");
+                    let str_sum = ((i * j).toString()).padStart(2, "0");
+
+                    let str01 = `${str_i} * ${str_j} = ${str_sum} `;
+                    strHtml_NN = strHtml_NN + `${str01}` + '<br>';
+
+                }
+                strHtml_NN = strHtml_NN + '</td>';
+
+            }
+            strHtml_NN = strHtml_NN + '</tr>';
+            strHtml_NN = strHtml_NN + '</table>';
+            NN.innerHTML = strHtml_NN;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- for loop -->
+    <!-- 跑操場 -->
+    <!-- index i -->
+    <!-- 從哪裡開始跑 1 => i = 1  -->
+    <!-- 跑幾圈 10  i <= 10 -->
+    <!-- 一次跑一圈  1 i++ -->
+    <script>
+        // 顯示裡面的內容 可以純文字 也可以 html<>
+        // document.write('<h1>hello</h1>');
+        // document.write('<h1>hello</h1>');
+        // document.write('<h1>hello</h1>');
+        // document.write('<h1>hello</h1>');
+        for (let i = 1; i <= 9; i++) {
+            for (let j = 1; j <= 9; j++) {
+                let str = `${i} * ${j} = ${i * j} `;
+
+
+                // 補0
+                let str_i = (i.toString()).padStart(2, "0");
+                let str_j = (j.toString()).padStart(2, "0");
+                let str_sum = ((i * j).toString()).padStart(2, "0");
+
+                let str01 = `${str_i} * ${str_j} = ${str_sum} `;
+
+                console.log(str_sum);
+                // console.log(str);
+                // console.log(str01);
+                // let str = `${padltr(i,"0")} * ${padltr(j,"0")} = ${padltr(i*j,"0")} `;
+                // str = "hello $name"  php
+                // str = `hello ${name}`  js
+                // console.log(str);    
+                document.write(str);
+            }
+            document.write('<br>');
+
+        }
+        // JS 補0
+        // 1 * 1 = 1 1 * 2 = 2 1 * 3 = 3 1 * 4 = 4 1 * 5 = 5 1 * 6 = 6 1 * 7 = 7 1 * 8 = 8 1 * 9 = 9
+        // 01 * 01 = 01 01 * 02 = 02
+
+    </script>
+    <!--補0   的九九乘法表 -->
+    <hr>
+    <h1>補0 的九九乘法表</h1>
+    <!-- 補0 -->
+    <script>
+
+        for (let i = 1; i <= 9; i++) {
+            for (let j = 1; j <= 9; j++) {
+                // 一串完成
+                let str = `${(i.toString()).padStart(2, "0")} * ${(j.toString()).padStart(2, "0")} = ${((i * j).toString()).padStart(2, "0")} `;
+                // 補0
+                let str_i = (i.toString()).padStart(2, "0");
+                let str_j = (j.toString()).padStart(2, "0");
+                let str_sum = ((i * j).toString()).padStart(2, "0");
+
+                let str01 = `${str_i} * ${str_j} = ${str_sum} `;
+
+                document.write(str);
+            }
+            document.write('<br>');
+
+        }
+    </script>
+
+    <!-- 表格顯示九九乘法表 -->
+
+    <hr>
+    <h1>表格顯示九九乘法表</h1>
+    <div id="show99"></div>
+    <script>
+        const bb = document.getElementById("show99");
+        let strHtml = '';
+        strHtml = '<table >';//<tr><td></td></tr></table>';
+        strHtml = strHtml + '<tr>';
+        for (let i = 1; i <= 9; i++) {
+
+            strHtml = strHtml + '<td>';
+            for (let j = 1; j <= 9; j++) {
+                let str = `${i} * ${j} = ${i * j} `;
+                // 補0
+                let str_i = (i.toString()).padStart(1, "0");
+                let str_j = (j.toString()).padStart(1, "0");
+                let str_sum = ((i * j).toString()).padStart(2, "0");
+
+                let str01 = `${str_i} * ${str_j} = ${str_sum} `;
+                strHtml = strHtml + `${str01}` + '<br>';
+
+            }
+            strHtml = strHtml + '</td>';
+
+        }
+        strHtml = strHtml + '</tr>';
+        strHtml = strHtml + '</table>';
+        bb.innerHTML = strHtml;
+    </script>
+
+    <!-- 表格顯示N*N 乘法表 prompt()-->
+
+    <hr>
+    <h1 id="showtitle">表格顯示N*N 乘法表 prompt()</h1>
+    <div id="showNN"></div>
+    <script>
+        const NN = document.getElementById("showNN");
+        const title = document.getElementById("showtitle");
+        let num1 = prompt("輸入數值1");
+        let num2 = prompt("輸入數值2");
+        title.textContent = `表格顯示 ${num1} * ${num2} 乘法表 prompt()`;
+        let strHtml_NN = '';
+        strHtml_NN = '<table >';//<tr><td></td></tr></table>';
+        strHtml_NN = strHtml_NN + '<tr>';
+        for (let i = 1; i <= num1; i++) {
+
+            strHtml_NN = strHtml_NN + '<td>';
+            for (let j = 1; j <= num2; j++) {
+                let str = `${i} * ${j} = ${i * j} `;
+                // 補0
+                let str_i = (i.toString()).padStart(1, "0");
+                let str_j = (j.toString()).padStart(1, "0");
+                let str_sum = ((i * j).toString()).padStart(2, "0");
+
+                let str01 = `${str_i} * ${str_j} = ${str_sum} `;
+                strHtml_NN = strHtml_NN + `${str01}` + '<br>';
+
+            }
+            strHtml_NN = strHtml_NN + '</td>';
+
+        }
+        strHtml_NN = strHtml_NN + '</tr>';
+        strHtml_NN = strHtml_NN + '</table>';
+        NN.innerHTML = strHtml_NN;
+    </script>
+
+    <hr>
+    <!-- 表格顯示N*N 乘法表 input-->
+    <h1 id="showtitle03">表格顯示N*N 乘法表 input</h1>
+    <input type="text" name="" id="num01">
+    <input type="text" name="" id="num02">
+    <button type="button" id="myBtn" onclick="calFun();">顯示</button>
+    <hr>
+
+    <div id="show03"></div>
+    
+</body>
+
+</html>
