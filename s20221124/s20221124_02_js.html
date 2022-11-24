@@ -1,32 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>輸入二數值 算出N*N 乘法表    
+    <title>輸入二數值 算出N*N 乘法表
     </title>
+    <style>
+        table,
+        tr,
+        td {
+            text-align: center;
+            border: 1px solid lightgrey;
+
+        }
+    </style>
+    <script>
+        function calFun() {
+            const NN = document.getElementById("show03");
+            const title = document.getElementById("showtitle03");
+            const num01 = document.getElementById("num01");
+            const num02 = document.getElementById("num02");
+            
+            title.textContent = `表格顯示 ${num01.value} * ${num02.value} 乘法表 input`;
+            strHtml_NN = '';
+            strHtml_NN = '<table >';//<tr><td></td></tr></table>';
+            strHtml_NN = strHtml_NN + '<tr>';
+            for (let i = 1; i <= num01.value; i++) {
+
+                strHtml_NN = strHtml_NN + '<td>';
+                for (let j = 1; j <= num02.value; j++) {
+                    let str = `${i} * ${j} = ${i * j} `;
+                    // 補0
+                    let str_i = (i.toString()).padStart(1, "0");
+                    let str_j = (j.toString()).padStart(1, "0");
+                    let str_sum = ((i * j).toString()).padStart(2, "0");
+
+                    let str01 = `${str_i} * ${str_j} = ${str_sum} `;
+                    strHtml_NN = strHtml_NN + `${str01}` + '<br>';
+
+                }
+                strHtml_NN = strHtml_NN + '</td>';
+
+            }
+            strHtml_NN = strHtml_NN + '</tr>';
+            strHtml_NN = strHtml_NN + '</table>';
+            NN.innerHTML = strHtml_NN;
+        }
+    </script>
 </head>
+
 <body>
-    <!--99 乘法表 7*8 6*3  -->
+    <!-- 99 乘法表 7*8 6*3  -->
     <!-- 練習 -->
     <!-- 練習 -->
     <!-- 輸入二個數字 num1 *num2 乘法表 -->
     <!-- input or prompt -->
-    <div id="main">
+    <!-- <div id="main">
 
     </div>
 
-<script>
-    const main=document.getElementById("main");
-    let num1=prompt("輸入數值1");
-    let num2=prompt("輸入數值2");
-    console.log(num1);
-    console.log(num2);
-    let str= (num1) * (num2);
-    console.log(str);
-    main.textContent= `$23{num1} *  ${num2} = ${str} `;
+    <script>
+        const main = document.getElementById("main");
+        let Inum1 = prompt("輸入數值1");
+        let Inum2 = prompt("輸入數值2");
+        console.log(Inum1);
+        console.log(Inum2);
+        let str = (Inum1) * (Inum2);
+        console.log(str);
+        main.textContent = `${Inum1} *  ${Inum2} = ${str} `;
 
-</script>
+    </script> -->
+
+
+    <!-- 表格顯示N*N 乘法表 input-->
+    <h1 id="showtitle03">表格顯示N*N 乘法表 input</h1>
+    <input type="text" name="" id="num01">
+    <input type="text" name="" id="num02">
+    <button type="button" id="myBtn" onclick="calFun();">顯示</button>
+    <hr>
+
+    <div id="show03"></div>
+
 </body>
+
 </html>

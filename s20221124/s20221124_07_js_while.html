@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--  prompt 輸入100 迴圈咆1-99 不可以超過100 -->
+    <!-- 1 -->
+    <!-- 2 -->
+    <!-- 99 -->
+    <!-- while -->
+    <div id="main">
+
+    </div>
+
+
+    <script>
+        const showdata=document.getElementById("main");       
+        let Inum = prompt("num(1-100)"); 
+
+        let i=1;
+        while( i <= Inum){
+            document.write(`${i}`+"<br>");
+            i++;
+            if(i>100){
+                document.write("輸入的值超過100，強制中斷<br>");
+                break;
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
