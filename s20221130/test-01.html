@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    table {
+      text-align: center;
+    }
+  </style>
+  <script>
+    function delRow(id) {
+      //取得要刪除的那一行
+      var row = document.getElementById(id);//按照id來找到行
+      var table = document.getElementById('mytb');
+      table.deleteRow(row.rowIndex);//按照行的索引刪除某行的內容
+    }
+    function addrow() {
+      var mytb = document.getElementById('mytb');
+      var index = mytb.rows.length - 1;//取得插入目標索引，某行
+      var row = mytb.insertRow(index);//把行插入到某個位置，插入某行
+      var id = 'row' + row.rowIndex;//拼接id
+      row.setAttribute('id', id);//設定id
+      var td0 = row.insertCell(0);//td0建立一個單元格
+      td0.innerHTML = "好看耐用超耐磨沙發兩件套";//設定td0的內容
+      var td1 = row.insertCell(1);
+      td1.innerHTML = row.rowIndex;//把行的索引賦給td1的內容
+      var td2 = row.insertCell(2);//把td2插入在某個單元格里面
+      td2.innerHTML = '<input type="button" value="刪除" onclick="delRow(\'' + id + '\')">' +
+        '<input type="button" value="修改" id="update" onclick="update(\'' + id + '\')">';
+    }
+    function update(id) {
+      var row = document.getElementById(id);
+      var td1 = row.cells[1];
+      var v = td1.innerHTML;
+      td1.innerHTML = '<input type="text" style="width:30px" value="' + v + '">';
+      row.cells[2].innerHTML = '<input type="button" value="刪除" onclick="delRow(\'' + id + '\')">' +
+        '<input type="button" value="確定" id="update" onclick="comfirmrow(\'' + id + '\')">';
+    }
+    function comfirmrow(id) {
+      var row=document.getElementById(id);
+      var td1=row.cells[1];//取得各行的第二個單元格
+      var input=td1.firstChild;//取得input標籤
+      var v=input.value;//取得input的內容
+      td1.innerHTML=v;//把內容賦給td1
+      var td2=row.cells[2];
+      td2.innerHTML = '<input type="button" value="刪除" onclick="delRow(\'' + id + '\')">' +
+        '<input type="button" value="修改" id="update" onclick="update(\'' + id + '\')">';
+    }
+  </script>
+</head>
+<body>
+<table border="1" cellspacing="0" cellpadding="0" id="mytb">
+  <tr>
+    <td>商品名</td>
+    <td>數量</td>
+    <td>操作</td>
+  </tr>
+  <tr id="del1">
+    <td>好看耐用超耐磨沙發兩件套</td>
+    <td>24</td>
+    <td><input type="button" value="刪除" onclick="delRow('del1')"><input type="button" value="修改"></td>
+  </tr>
+  <tr>
+    <td colspan="3"><input type="button" value="增加訂單" onclick="addrow()"></td>
+  </tr>
+</table>
+</body>
+</html>

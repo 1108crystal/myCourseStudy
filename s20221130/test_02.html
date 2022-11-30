@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Practice</title>
+    <meta name="author" content="user" />
+</head>
+
+<body>
+    <input type="button" id="btn1" name="buttons" class="btns special-btn" value="Button 1">
+    <input type="button" id="btn2" name="buttons" class="btns" value="Button 2">
+    <input type="button" id="btn3" name="buttons" class="btns" value="Button 3">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        // 所有 class 為 btns 的元件都綁定此 click 事件
+        $(".btns").click(function() {
+            var id = $(this).attr("id");          // equals：this.id
+            var name = $(this).attr("name");      // equals: this.name
+            var theClass = $(this).attr("class"); // equals: this.className
+            var value = $(this).attr("value");    // equals: this.value　// equals： $(this).val(); 
+
+            alert
+            (
+                "id = " + id + "\n" +
+                "name = " + name + "\n" +
+                "class = " + theClass + "\n" +
+                "value = " + value
+            );
+        });
+
+        // :button 意即  所有的(type="button") 且   class 名稱為 special-btn
+        $(":button.special-btn").click(function() {
+            alert('You clicked a special button');
+        });
+    });
+    </script>
+</body>
+</html>
