@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function練習</title>
+</head>
+
+<input type="number" name="num1" id="num1">
+<input type="number" name="num2" id="num2">
+<button type="button"  onclick="btn();">送出</button>
+<hr>
+<p id="resultP">Result</p>
+
+<body>
+    <SCRipt>
+        function myFun(){
+            document.write('myFun OK');
+            console.log('myFun ok');
+        }
+        //有變數
+        function helloFun(nameInput,age){
+            let str = `Hello ${nameInput} ${age}`;
+            console.log('str',str);
+        }
+
+        myFun();
+        let name='王小明';
+        helloFun(name,18);
+    
+        //input 二變數num1,num2
+        //btn
+        //result 周長(num1+num2)*2 面積 num1*num2
+        function btn(){
+            const v1 = document.getElementById('num1');
+            const v2 = document.getElementById('num2');
+            let resultInput = document.getElementById('resultP');
+            let Peri = cal_getPeri(Number(v1.value),Number(v2.value));
+            let Area = cal_getArea(Number(v1.value),Number(v2.value));
+            resultInput.textContent = "周長:"+ Peri;
+            resultInput.textContent = resultInput.textContent +"面積:" + Area;
+            if(Area>500) {
+                resultInput.textContent = resultInput.textContent +"面積 大於500" ;
+            }else{
+                resultInput.textContent = resultInput.textContent +"面積 小於500" ;
+            }
+
+        }
+        
+        function cal_getPeri(v1,v2){
+            var str01 = (v1+v2)*2;  //周長
+            console.log(str01);
+            return str01 ;
+        }
+
+        function cal_getArea(v1,v2){
+            
+            var str02 = (v1+v2);    //面積
+            console.log(str02);
+            return str02;
+        }
+    </SCRipt>
+    
+</body>
+</html>
