@@ -9,9 +9,62 @@
 </head>
 
 <body>
+    <script>
+        // 陣列變數
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        // JavaScript Sorting Arrays 【排序陣列】
+        console.log("JavaScript Sorting Arrays 【排序陣列】");
+        console.log("===========================================");
+        // JavaScript Sorting Arrays 【排序陣列】
+
+        console.log('原始值:', fruits);
+        fruits.sort();
+        console.log('sort()=>', fruits);
+        // Converting Arrays to Strings【將陣列轉成字串顯示出來】
+        console.log("toString()=>", fruits.toString());
+        // join()方法還將所有數組元素連接成一個字符串
+        console.log("join()=>", fruits.join('*'));
+        // pop()方法從數組中刪除最後一個元素
+        console.log("pop()=>", fruits.pop());
+        console.log("pop後的值=>", fruits);
+
+        //push()方法將一個新元素添加到數組（最後）：
+        console.log("push()=>", fruits.push("mary"));
+        console.log("push後的arry=>", fruits);
+
+        //shift()方法刪除第一個數組元素並將所有其他元素“移動”到較低的索引：
+        console.log("shift()=>", fruits.shift());
+        console.log("shift後的arry=>", fruits);
+
+        //unshift()方法將一個新元素添加到數組（在開頭），並“取消移動”舊元素
+        console.log("unshift()=>", fruits.unshift("Crystal"));
+        console.log("unshift=>", fruits);
+
+        //改變元素(KEY)
+        console.log("fruits[0] =>", fruits[0] = "Kiwi");
+        console.log("fruits Array=>", fruits);
+
+        //JavaScript 數組長度 length屬性提供了一種將新元素附加到數組的簡單方法
+        console.log("fruits.length =>", fruits[fruits.length] = "Kiwi");
+        console.log("fruits Array=>", fruits);
+
+        // 陣列變數
+        const myGirls = ["Cecilie", "Lone"];
+        const myBoys = ["Emil", "Tobias", "Linus"];
+
+        //concat()方法通過合併（連接）現有數組來創建一個新數組 
+        const myChildren = myGirls.concat(myBoys);       
+        console.log("myChildren array concat()【myGirls+myBoys】 =>", myChildren);
+        
+    </script>
+
+
+
+
 
     <script>
-
+        console.log("===========================================");
         //array
         //key 很多個變數 打包在一個大包包裡面
         //php indexArr vs js array

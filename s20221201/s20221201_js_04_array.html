@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //array sortreverse string
+        let myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // *2?
+
+        // 宣告新的陣列 newArr &new2Arr
+        let newArr = [];
+        let new2Arr = [];
+        myArr.forEach((value, key) => {
+            newArr.push(value * 2);
+            if (value <= 6) {
+                new2Arr.push(value * 3);
+            } else {
+                new2Arr.push(value);
+            }
+        });
+
+        //練習
+        // new2Arr myArr[value] value <6 
+        // new2Arr = [new2value *3,newvalue *3 ,new2value *3,......]
+
+        console.log('myArr', myArr);
+        console.log('newArr', newArr);
+        console.log('new2Arr', new2Arr);
+
+
+
+        // map 進階用法(一)
+        let mapArr = myArr.map((value, index) => {
+            if (value <= 6) {
+                return value * 3;
+            } else {
+                return value;
+            }
+        })
+        console.log('mapArr map 進階用法(一)', mapArr);
+
+
+        // map 進階用法(二)
+        let mapArr02fun=((value, index) => {
+            if (value <= 6) {
+                return value * 3;
+            } else {
+                return value;
+            }
+        });
+        let mapArr02 = myArr.map(mapArr02fun);
+
+        console.log('mapArr02 map 進階用法(二)', mapArr02);
+    </script>
+</body>
+
+</html>
