@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        .red{
+            color:red;            
+        }
+        
+        .green {
+            color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p id="myPjq"></p>
+    <p id="myPjs"></p>
+    <!-- jQuery ? -->
+    <!--  boostrap 別人寫好的css -->
+    <!--  bs 1.載入 -->
+    <!--  bs 2.cdn js 載入 -->
+
+    <!--  jquery 別人寫好的 js -->
+    <!--  jq 1.載入 -->
+    <!--  jq 2.cdn js 載入 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        
+        //---jquery 要先綁定　才能使用
+        $(function(){            
+                $('#myPjq').text('Hello jquery');
+                const myPJs = document.getElementById('myPjs');
+                const myPJq  = $('#myPjq');
+                // console.log('myPJs',myPJs);
+                // console.log('myPJq',myPJq);
+                myPJq.text('您好嗎？？？？');
+                myPJq.attr('class','red');
+
+                myPJs.innerText='Hello Js';
+                myPJs.setAttribute('class','green');
+                
+        });
+
+    </script>
+</body>
+
+</html>

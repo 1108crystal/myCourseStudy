@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自我練習 js DOM</title>
+</head>
+<body>
+    <p>
+        <button type="button" onclick="appendFun();">myBtn appendChild dom</button>
+    </p>
+    <p>
+        <button type="button" onclick="removeFun();">myBtn remove dom</button>
+    </p>
+
+    <div id="div1">
+        <p id="p1">這是一個段落。</p>
+        <p id="p2">這是另一個段落。</p>
+        </div>
+         
+        <script>
+        //新增一個結點
+        var para = document.createElement("p");
+        //新增 文字內容
+        var node = document.createTextNode("這是一個新段落。");
+        //將 node 文字內容 新增到para 新的結點上
+        para.appendChild(node);
+         
+        //找出目前 div1 的結點
+        var element = document.getElementById("div1");
+        //將新增的結點 para 放在 div1 的結點內【當作div1 的子結點】
+        element.appendChild(para);
+
+
+        // 丟到我要的位置
+        const myDiv = document.getElementById('myDiv');
+        let text = 1;
+
+        function appendFun() {
+            // 建立create p
+            // createElement('p')
+            const greenP = document.createElement('p');
+            greenP.textContent = 'hello :))' + text;
+            text++;
+            greenP.style.color = 'green';
+            console.log('greenP', greenP);
+
+            console.log('appendFun ok');
+            myDiv.appendChild(greenP);
+            // myDiv.insertBefore(greenP,null);
+
+        }
+
+
+        // Remove 刪除節點
+        // RemoveChild 子節點
+        function removeFun() {
+            // 找到我要刪除的節點
+            // const myP = document.querySelectorAll('#myDiv>p');
+            // console.log(myP);
+            // myP[0].remove();
+            
+            // 找到刪除的節點
+            // 刪除他的子結點 myDiv.firstElementChild
+            // myDiv.removeChild(myDiv.firstElementChild);
+            myDiv.removeChild(myDiv.lastElementChild);
+            
+        }        
+        </script>    
+</body>
+</html>
