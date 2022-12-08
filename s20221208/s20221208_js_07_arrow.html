@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>arrow</h3>
+    <script>
+        //arrow function 
+        //let myFun =function (data){
+        // return data*2;
+        // };
+        //1.function =>
+        //2.如果只有一個數()可以省略
+        //  如果兩個以上變數()不可以省略
+        //  沒有變數 ()不可以省略
+        //3.return只有一行{}可以省略
+        // return 二行以上{}不可以省略
+        let myFun = (data) => data * 2;
+        //let myFun= (data,value) => data *2
+        //let myFun= () => data*2;
+        console.log(myFun(3));
+        console.log(myFun(5));
+        console.log(myFun(10));
+
+        //設計一個function arrow
+        //sum=num1 + num2
+
+        //方法一 用一般的 function
+        function SUMValue(data1, data2) {
+            return data1 + data2;
+        }
+        //方法二 用箭頭函式
+        let mySum = (data1, data2) => data1 + data2;
+
+        console.log(SUMValue(30, 80));
+
+        console.log(mySum(3, 5));
+        console.log(mySum(10, 5));
+
+
+
+
+    </script>
+</body>
+
+</html>
