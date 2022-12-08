@@ -59,9 +59,12 @@ $mobileArr=[
     ['name'=>'Apple iPhone 14 Plus 256G',
     'price'=>'$31,990',
     'location'=>['中','南']],
-    ['name'=>'Apple iPhone 14 Plus 256G 紫',
-    'price'=>'$32,500',
-    'location'=>['北','南']]
+    ['name'=>'Apple iPhone 14 Plus 256G',
+    'price'=>'$31,990',
+    'location'=>['中','南']],
+    ['name'=>'Apple iPhone 14 Plus 256G',
+    'price'=>'$31,990',
+    'location'=>['中','南']]
 ];
 dd($mobileArr);
 foreach($mobileArr as $key=> $value){

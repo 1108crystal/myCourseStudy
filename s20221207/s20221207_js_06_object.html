@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //studentObj
+        //property
+        //'name':'amy'
+        //'age':18
+        //'chinese':70,
+        //'english':80,
+        //'math':90
+
+        //method
+        //sumFUn
+        //avgFun
+        let studentObj = {
+            'name': '王小明',
+            'age': 18,
+            'chinese': 70,
+            'english': 80,
+            'math': 90,
+            'sumFun': function () {
+                let sum = this.chinese + this.english + this.math;
+                console.log('sum=>', sum);
+                return sum;
+
+            },
+            'avgFun': function () {
+                let result = this.sumFun();
+                let avg = result / 3;
+                console.log(`${result} /3 =>`, avg);
+            }
+
+        }
+
+        console.log('studentObj', studentObj);
+        console.log('studentObj.name', studentObj.name);
+        console.log('studentObj.age', studentObj.age);
+        console.log('studentObj.chinese', studentObj.chinese);
+        console.log('studentObj.english', studentObj.english);
+        console.log('studentObj.math', studentObj.math);
+
+        studentObj.sumFun();
+        studentObj.avgFun();
+
+    </script>
+
+
+    <script>
+        //studentObj
+        //property
+        //'name':'amy'
+        //'age':18
+        //'chinese':70,
+        //'english':80,
+        //'math':90
+
+        //method
+        //sumFUn
+        //avgFun
+        let studentALLObj = {
+            stud1: {
+                'name': '王小明',
+                'age': 18,
+                'chinese': 70,
+                'english': 80,
+                'math': 90
+            },
+            stud2: {
+                'name': '小黃',
+                'age': 19,
+                'chinese': 65,
+                'english': 45,
+                'math': 75
+            },
+            stud3: {
+                'name': '小黑',
+                'age': 20,
+                'chinese': 100,
+                'english': 99,
+                'math': 98
+            },
+            stud4: {
+                'name': '小花',
+                'age': 18,
+                'chinese': 88,
+                'english': 88,
+                'math': 88
+            },
+            'sumFun': function () {
+                let sum = this.chinese + this.english + this.math;
+                console.log('sum=>', sum);
+                return sum;
+
+            },
+            'avgFun': function () {
+                let result = this.sumFun();
+                let avg = result / 3;
+                console.log(`${result} /3 =>`, avg);
+            }
+
+        }
+
+        console.log('studentALLObj', studentALLObj);
+        console.log('studentALLObj.stud2.name', studentALLObj.stud2.name);
+        console.log('studentALLObj.stud2.age', studentALLObj.stud2.age);
+        console.log('studentALLObj.stud2.chinese', studentALLObj.stud2.chinese);
+        console.log('studentALLObj.stud2.english', studentALLObj.stud2.english);
+        console.log('studentALLObj.stud2.math', studentALLObj.stud2.math);
+
+        studentALLObj.sumFun();
+        studentALLObj.avgFun();
+
+    </script>
+</body>
+
+</html>

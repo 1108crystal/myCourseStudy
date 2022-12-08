@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let myObj = {
+            's1': 'amy',
+            's2': 'bob',
+            's3': 'cat',
+        }
+        console.log('myObj', myObj);
+        //小練習
+        //5個手機
+        //name:price
+        let myPhone = {
+            'Apple iPhone 14 128G': 25800,
+            'Apple iPhone 14 256G': 29800,
+            'Apple iPhone 14 512G': 31800,
+            'Apple iPhone 14 Plus 128G': 25800,
+            'Apple iPhone 14 Plus 128G 紫': 26800,
+            'Apple iPhone 14 Plus 256G': 28800,
+            'Apple iPhone 14 Plus 256G 紫': 28900
+        }
+        console.log('myPhone', myPhone);
+
+
+        //多維obj
+        let multimyPhoneArr = [
+            {
+                'name': 'Apple iPhone 14 128G',
+                'price': 2580,
+            },
+            {
+                'name': 'Apple iPhone 14 256G',
+                'price': 29800,
+            },
+            {
+                'name': 'Apple iPhone 14 512G',
+                'price': 31800,
+            },
+            {
+                'name': 'Apple iPhone 14 Plus 128G',
+                'price': 25800,
+            },
+            {
+                'name': 'Apple iPhone 14 Plus 128G 紫',
+                'price': 26800,
+            },
+            {
+                'name': 'Apple iPhone 14 Plus 256G',
+                'price': 28800,
+            },
+            {
+                'name': 'Apple iPhone 14 Plus 256G紫',
+                'price': 28900,
+            }
+        ]
+        console.log('multimyPhoneArr', multimyPhoneArr);
+        // ---------用foreach 讀出obj--//
+        let PhoneSUM = 0;
+        multimyPhoneArr.forEach((value, key) => {
+            console.log(`${key} =>`, value);
+            //手機的加總
+            PhoneSUM += value.price;
+        });
+        console.log('手機的加總', PhoneSUM);
+
+        // object {{}{}{}} 多個ojb的宣告 & 使用方式
+        let myObj2 = {
+            'obj1': {
+                'name': 'Apple iPhone 14 128G',
+                'price': 25800,
+                'location': ['北', '中', '南']
+            },
+            'obj2': {
+                'name': 'Apple iPhone 14 256G',
+                'price': 28500,
+                'location': ['中', '南']
+            },
+            'obj3': {
+                'name': 'Apple iPhone 14 512G',
+                'price': 34500,
+                'location': ['北', '中', '南']
+            },
+            'obj4': {
+                'name' :'Apple iPhone 14 Plus 128G',
+                'price': 29800,
+                'location': ['中', '南']
+            },
+            'obj5': {
+                'name': 'Apple iPhone 14 Plus 128G 紫',
+                'price': 29990,
+                'location': ['北']
+            },
+            'obj6': {
+                'name': 'Apple iPhone 14 Plus 256G',
+                'price': 31990,
+                'location': ['中', '南']
+            },
+            'myFun':function(){
+                console.log('Hello');
+            }
+        }
+        console.log('myObj2',myObj2);
+        console.log('myObj2.myObj1',myObj2.obj1);
+        console.log('myObj2[\'Obj1\]',myObj2['obj1']);
+    </script>
+</body>
+
+</html>

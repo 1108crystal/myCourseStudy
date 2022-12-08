@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //公司發年終
+        //employee=[3,4,5,6,7];
+        //ex1.發二個月總共要發多少呢?
+        //ex2.每個人都發二個月 但領五萬的是傑出員工 四個月 總共要發多少?
+
+        //----【map() 說明】-------//
+        //替代如for-of 的迴圈語法
+        //會透過函式內所回傳的值組合成一個新的陣列
+        // 並不會改變原陣列
+        // 回傳數量會等於原始陣列的長度
+        // 如果不回傳則是 undefined
+        // 簡單來說就是我們若用陣列使用 map() 方法呼叫函式的話，就可以讓陣列中每個元素執行完該函式後，將每個元素的執行結果回傳到一個新的陣列。
+
+        // ---- map() 和 forEach() 差別 -----//
+        // map() 方法使用起來跟 forEach() 方法非常類似，
+        // 最大的區別就是 forEach() 會修改原本的陣列，
+        // 而map() 方法可以回傳一個新的陣列，並保有原本的舊陣列，
+        // 另外 forEach() 並不會回傳任何東西，所以寫在 return 裡的東西不會有作用哦！
+
+        let employeeArr = [3, 4, 5, 6, 7];
+        let employeeBonusArr = employeeArr.map((value, key) => {
+            if (value == 5) {
+                return value * 4;
+            } else {
+                return value * 2;
+            }
+
+        })
+        console.log(employeeBonusArr);
+
+        //----【reduce() 說明】-------//
+        // 替代如for-of 的迴圈語法
+        // 這個方法可以讓陣列中的每個元素與回傳的值再次作運算，將陣列化為單一值，常常拿來應用於陣列中每個元素的「累加」或是「比較」，相當ㄉ實用！
+        // 一般的陣列方法可以 forEach 來寫
+
+
+        //reduce 加總
+        //total initValue 最成始的值
+        //value currentValue 
+
+
+        let sum = employeeBonusArr.reduce((total, value) => {
+            console.log('total', total);
+            console.log('value', value);
+            return total + value;
+        });
+        console.log(sum);
+
+
+        //----【filter() 說明】-------//
+        // 替代如for-of 的迴圈語法
+        // filter()好用的原因，除了可以產生一個新陣列，且不會更動到原本的陣列，對於沒有值的元素也不會起作用。
+        // 而filter()和splice()的不同點，正是filter()不會更動到原陣列。
+
+        //filter
+        let employeeArrFilter = employeeArr.filter((value) => {
+            return value > 5;
+        })
+        console.log(employeeArrFilter);
+
+
+    </script>
+</body>
+
+</html>

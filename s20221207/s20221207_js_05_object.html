@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //---物件（object）
+        //是一個複合資料型態, 可以是變數、陣列、 函數 等…可以是任何資料型態
+
+        //用 {} 就可以宣告一個物件，
+        //如範例，物件裏可以是變數、陣列、函數，等等，包成一個物件，也方便管理
+
+        let obj = {
+            //變數 property
+            'name':'小名',
+            'age' :18,
+            'address':'泰山區貴子里致遠新村55-1號',
+            //法方 method
+            'location':{'key':'value test'},
+            'helloFun':function(){
+                // console.log('hello')
+                console.log('this.name',this.name);
+                let str=`Hello 我是${this.name} 今年${this.age}歲 ${this.location.key}`;
+                console.log(str);
+            },
+            'sleepFun':function(){
+                //let str ='${this.name}'
+                console.log(this.name);
+                console.log('arrow this ' ,this);
+            },            
+            //arrow 箭頭函式 this通指向外部的window
+            'sleepFun':()=>{
+                // console.log('sleepFun this' , this);
+                // obj.name
+                // let str = `${this.name}`;
+            }
+
+        }
+
+        console.log('log',obj);
+        obj.name;
+        console.log('obj.name',obj.name);
+        obj.age;
+        console.log('obj.age',obj.age);
+        obj.helloFun();
+
+// --------------------------------------------------------------------------//
+        //property
+        //address:'XXXX路'
+
+        //method
+        //'sleepFun'
+        //log sleep...
+
+        //---物件（object）
+        //是一個複合資料型態, 可以是變數、陣列、 函數 等…可以是任何資料型態
+
+        //用 {} 就可以宣告一個物件
+        let obj01 = {
+            //變數 property
+            'name':'職訓中心',
+            'age' :18,
+            'address':'泰山區貴子里致遠新村55-1號',
+            
+            //法方 method
+            'thisFun':function(){
+                // console.log('hello')
+                console.log('this.name',this.name);
+                let str=`Hello 我是${this.name} 今年${this.age}歲`;
+                console.log(str);
+                // ${this.location.key}
+
+            },
+            'sleepFun':()=>{
+                // console.log(obj01.name);
+                // console.log(`${obj01.name}`, obj01.address);
+                // console.log(name, obj01.age);
+                
+            }
+        }
+        obj01.thisFun();
+        obj01.sleepFun();
+    </script>
+
+</body>
+</html>

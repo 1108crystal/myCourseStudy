@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <button type="button" id="myBtn">myBtn</button>
+    <button type="button" id="myBtn2">myBtn2</button>
+    <button type="button" id="myBtn3">myBtn3</button>
+    <button type="button" id="myBtn9" onclick="myFunction9();">myBtn9</button>
+    <script>
+        //方法一
+        myBtn.addEventListener("click", myFunction);
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Hello World";
+        }
+
+        //方法二
+        myBtn2.addEventListener("click", function () {
+            document.getElementById("demo").innerHTML = "Hello World =>方法二";
+        });
+
+        //方法三
+        myBtn3.addEventListener("click", () => {
+            document.getElementById("demo").innerHTML = "Hello World =>方法三";
+        });
+        //方法四
+        let funVal=function funValFunction(){
+            console.log('funValFunction');
+        };
+        console.log('funVal',funVal);
+        funVal();
+
+        //方法五
+        let funVal2=()=>{
+            console.log('funValFunction2');
+        };
+        console.log('funVal2',funVal2);
+        funVal2();
+
+
+        //方法九
+        function myFunction9() {
+            document.getElementById("demo").innerHTML = "Hello World =>方法";
+        }
+    </script>
+</body>
+
+</html>
