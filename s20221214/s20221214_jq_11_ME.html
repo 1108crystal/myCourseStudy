@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習</title>
+    <style>
+        .box1 {
+            background-color: lightpink;
+
+            width: 200px;
+            height: 200px;
+        }
+
+        .box2-1 {
+            background-color: limegreen;
+
+            width: 800px;
+            height: 50px;
+        }
+
+        .box2-2 {
+            background-color: lightcyan;
+
+            width: 800px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select id="set1">
+        <option>請選擇你最愛的寵物</option>
+        <option>Dog</option>
+        <option>Cat</option>
+        <option>Hamster</option>
+        <option>Parrot</option>
+        <option>Spider</option>
+        <option>Goldfish</option>
+    </select>
+    <button type="button" id="toggleBtn">select toggle</button>
+    <button type="button" id="showdata">select showdata</button>
+
+    <div class="box1">
+        <p></p>
+    </div>
+    <hr>
+    <h4>自我練習題</h4>
+    <select id="set2">
+        <option>hide</option>
+        <option>show</option>
+        <option>toggle</option>
+    </select>
+    <div class="box2-1"></div>
+    <div class="box2-2"></div>
+
+
+    </select>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        //練習select 
+        //1.hide show toggle
+        //2.fade in fade out toggle
+        //3.slide up /slide down toggle
+        //box1=>click
+        //box2
+
+        $(function () {
+            $('#toggleBtn').click(function () {
+                $('#set1').toggle();
+            });
+
+            $('#showdata').click(function () {
+                //    console.log($('#set1').val());
+                $('p').text($('#set1').val());
+                $('#box1').css('background-color', 'lightgreen');
+            });
+
+            $('.box2-1').click(function () {
+                const box2 = $('.box2-2');
+                let set2Val = $('#set2').val();
+
+ 
+                switch (set2Val) {
+                    case 'hide':
+                        // 
+                        box2.toggle(); //效果 -隱藏和顯示 show->hide  ;hide->show
+
+                        box2.text('hello hide');// box2 顯示hello hide
+                        break;
+                    case 'show':
+                        box2.fadeToggle(2000);//效果 -淡入淡出(2000) fadeIn-fadeOut  ;fadeOut->fadeIn
+                        box2.text('hello fade');// box2 顯示hello hide
+                        break;
+                    case 'toggle':
+                        box2.slideToggle(2000);//效果 -滑動(2000) slideDown->slideUp  ; slideUp->slideDown
+                        box2.text('hello slide');
+                        break;
+
+                    default:
+                        break;
+                }
+
+            })
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>

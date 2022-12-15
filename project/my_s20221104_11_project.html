@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022/11/04 練習專案</title>
+    <!-- 載入css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css"
+        integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        .footer {
+            color: aliceblue;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa-brands fa-twitter"></i>戶外探索</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home-tab">關於我</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#profile-tab">安全指引</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-tab">戶外用品展</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#class-tab" role="button"
+                            data-bs-toggle="dropdown">課程</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#class-tab">課程1</a></li>
+                            <li><a class="dropdown-item" href="#class-tab">課程2</a></li>
+                            <li><a class="dropdown-item" href="#class-tab">課程3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bootstrap 5 Jumbotron 改用div -->
+    <div class="container-fluid mt-3">
+        <div class="p-5 bg-primary text-white rounded">
+            <h1>戶外探索</h1>
+            <p>
+                縱情山野 自在悠遊
+                攀岩 登山 溯溪 雪訓 攀樹 親子活動 求生技能</p>
+        </div>
+    </div>
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <!-- carousel button 只是器 -->
+        <!-- active 一開始顯示頁面 -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <!-- carousel-item 增加項目 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active ">
+
+                <img src="https://images.unsplash.com/photo-1527856263669-12c3a0af2aa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                    alt="Chicago" class="d-block" style="width: 100% ;height: 700px;;">
+                <div class="carousel-caption">
+                    <h3>Los Angeles</h3>
+                    <p>We had such a great time in LA!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1499803270242-467f7311582d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1973&q=80"
+                    alt="Los Angeles" class="d-block" style="width: 100% ;height: 700px; ">
+                <div class="carousel-caption">
+                    <h3>Chicago</h3>
+                    <p>Thank you, Chicago!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1584645530522-5de8caab591c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                    alt="New York" class="d-block" style="width: 100% ;height: 700px;;">
+                <div class="carousel-caption">
+                    <h3>New York</h3>
+                    <p>We love the Big Apple!</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- tabs -->
+    <div class="container-fluid mt-5">
+        <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#aboutme-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">關於我們</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">安全指引</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">外用品展</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="class-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-class"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">課程說明</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active mx-auto" id="aboutme-tab-pane" role="tabpanel"
+                aria-labelledby="home-tab" tabindex="0">
+                <div class="row">
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-8">
+                        <h3 class="mt-3 text-center"><i class="fa-regular fa-paper-plane"></i>&nbsp;&nbsp;關於我們</h3>
+                        <p>
+                            關於戶外探索團隊:<br>
+                            戶外探索團隊，是由各項戶外活動學有專精的青年組成，有ＮＯＬＳ美國國家戶外領導學校畢業的講師、 世界級大山岩壁攀登高手、定向定位專家、溯溪達人、攀樹專家、冰雪攀高手。<br>
+                            我們不只在技術上專精，我們更對這片生長的土地，懷著深厚的感情。有鑑於戶外活動的興盛，但環境保護教育並
+                            沒有隨著提升，看著台灣的山林日益遭到破壞，教育大家愛惜山林的工作，我們更是責無旁貸。<br>
+                            希望有一天，台灣水鹿成群在山林間奔馳、溪中苦花成群、大冠鷲滿佈天際，這是我們的夢，如果你也和我們一樣， 歡迎加入我們的行列，共同來實現這個夢想。<br>
+                            山野悠遊 LOGO 的靈感來源:<br>
+                            2005 年夏，我參加了 NOLS 在阿拉斯加的課程，在冰河及荒原渡過了一個月，課程最後一天，我們走出了曠野，<br>
+                            這時湖上綻放著金光，有隻水獺悠遊於湖面，形成美麗的曲線，相機中用了一個月的電池巳沒電了，無法拍下當 時的景象，但那曲線、那金光卻深埋在我的心中，於是就成了我們山野悠遊戶外探索團隊的
+                            LOGO<br>
+                            。圓形代表著 地球，也代表著湖面，三條弧線可看作是水流或是路徑，另一層的意義分別是代表著天、地、人的合一，就是希望 我們能和大自然和平共處，縱情山野，自在悠遊。<br>
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                <div class="row">
+                    
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-8">
+                        <h3 class="mt-3 text-center"><i class="fa-regular fa-paper-plane"></i>&nbsp;&nbsp;安全指引</h3>
+                        虎豹潭事件釀4學童、2家長身亡。為避免憾事再發生，台北市教育局委請台北市學校環境教育中心，針對5項常見的戶外活動—登山、露營、溯溪、自行車、獨木舟，編訂「台北市學校戶外教育安全指引」，以提升親師生戶外活動的安全意識，可於教育局網站下載。（https://reurl.cc/mGynvG）<Br>
+
+                        教育局指出，戶外教育安全指引各編章分別從「行前規畫」、「活動中注意事項」及「緊急事件處理」三個面向，歸納所需要具備的安全觀念，並蒐集相關網站，提供親師生運用。<Br>
+
+                        例如露營篇，於行前規畫提醒攜帶易保存及烹調食材、保暖衣物、帳篷設備、個人藥品及急救箱等必要裝備，有關場域選擇，可至交通部觀光局露營區資訊查詢專區，查詢合格的露營場，行前要再確認身體狀況、近期天候跟露營地區的環境變化等。<Br>
+
+                        活動中注意事項包含營區規畫，如在堅硬平坦的地方搭帳、安全飲食如注意飲食衛生、用火安全、無痕山林如不留下垃圾等；緊急事件處理包含蜂蟲螫咬之處理、災害發生應立即離開危險環境，立即通報相關單位等；指引也整理對於幼兒活動安全提醒。<Br>
+
+                        教育局說，近來戶外教育已形成新的學習風潮，讓學生走出教室，將學習與生活結合，提高學生學習興趣，加上由業者提供服務的體驗經濟活動盛行，此類活動也存在潛在風險，因此除讓學生學習「安全」課題，學會風險評估、自我保護等素養，更輔以提升教師、家長對於戶外活動之安全及風險管理評估意識，讓安全落實於生活中。<Br>
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                <div class="row">
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-8">
+                        <h3 class="mt-3 text-center"><i class="fa-regular fa-paper-plane"></i>&nbsp;&nbsp;2022台灣戶外用品展</h3>
+                台北經典場 圓滿落幕🙌
+                誠摯感謝所有參觀者的支持！><br>
+                有您們的參與，讓展會更加熱鬧精彩✨><br>
+                br>
+                誠摯感謝所有的參展廠商與工作團隊！><br>
+                與我們一起從零到有 一步步打造 屬於大家的台灣戶外用品展！><br>
+                <br>
+                誠摯感謝所有持續關注展會動態的凹豆咖們><br>
+                即使有些朋友今年無法到場參觀，仍期待與大家明年展場見！><br>
+                <br>
+                看著展覽人潮滿滿，希望大家也都收穫滿滿❤️><br>
+                👉今年展會的精彩回顧，將陸續更新於官網：https://bit.ly/3Dfo4Zy><br>
+                👉也別忘了追蹤官方Instagram帳號：https://bit.ly/3MRx0r6><br>
+                <br>
+                凹豆咖們~我們明年再見👋><br>
+                快筆記明年的展覽時間吧！><br>
+                <br>
+                👣2023台灣戶外用品展 – 出走台中場><br>
+                🗓5/19 (五) – 22 (一)><br>
+                📍臺中國際展覽館><br>
+                🔗官方網站: https://www.chanchao.com.tw/taiwanoutdoor/taichung/><br>
+                <br>
+                👣2023台灣戶外用品展 - 台北經典場><br>
+                🗓10/12 (四) – 15 (日)><br>
+                📍台北南港展覽館1館><br>
+                🔗官方網站: https://www.chanchao.com.tw/taiwanoutdoor/taipei/><br>
+                <Br>
+                </div>
+                <div class="col-sm-2">
+                </div>
+            </div>                    
+            </div>
+            <!-- card 1 -->
+            <div class="tab-pane fade" id="contact-tab-class" role="tabpanel" aria-labelledby="contact-tab"
+                tabindex="0">
+                <!-- card 1-->
+                <div class="container">
+                    
+                    <div class="row">
+                        <h3 class="mt-3 text-center"><i class="fa-regular fa-paper-plane"></i>&nbsp;&nbsp;課  程</h3>
+                        <div class="col-sm-4">
+                            <div class="card" height="450">
+                                <img src="https://scontent.ftpe7-2.fna.fbcdn.net/v/t39.30808-6/310967230_5875962302422040_813725836052798906_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=oFU1tbDSWVoAX95dyrQ&_nc_ht=scontent.ftpe7-2.fna&oh=00_AfD8I5BtR3VWV7ExideuCjp4j7NvJsPVkiUUR3C68S3HMA&oe=6368FD3F"
+                                    alt="" class="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title">多元化的教具</h4>
+                                    <p class="card-text">
+                                        多元化的教具
+                                        提供各類攜帶式教具，移動式低空、、等等，采風戶外探索持續不斷推廣體驗教育，不僅融入課程中，也提供訂購教具平台，讓每一位對體驗教育有興趣的夥伴們自己身邊就有教具能夠運用！
+                                    </p><br>
+                                    <a href="#" class="btn btn-primary">更多教具</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card" height="450">
+                                <img src="https://acct.org.tw/wp-content/uploads/2021/11/DSC5086-%E5%A7%BB%E7%B7%A3%E8%B7%AF.jpg"
+                                    alt="" class="card-img-top">
+                                <div class="card-body ">
+                                    <h4 class="card-title">戶外課程</h4>
+                                    <p class="card-text">
+                                    <table>
+                                        <tr>
+                                            <td style="width:60% ;">高空繩索挑戰</td>
+                                            <td style="width:40% ;">低空設施的團隊運作</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:60% ;">漆彈的角色分工</td>
+                                            <td style="width:40% ;">攀岩的自然體驗</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:60% ;">溯溪的挑戰</td>
+                                            <td style="width:40% ;">攀樹體驗</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:60% ;">獨木舟</td>
+                                            <td style="width:40% ;">水彈對抗</td>
+                                        </tr>
+                                    </table>
+                                    </p>
+                                    <a href="#" class="btn btn-primary">更多資訊</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card" height="450">
+                                <img src="https://scontent.ftpe7-1.fna.fbcdn.net/v/t39.30808-6/310652041_5875962199088717_2278041124639051308_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=C5Z4HAy0tGIAX8kb4By&_nc_ht=scontent.ftpe7-1.fna&oh=00_AfDkTuBw0X8reJz3ROrmYfXHdDCJdWikX8pO0OAjDMxJPg&oe=636824AE"
+                                    alt="" class="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title">教育課程設計</h4>
+                                    <p class="card-text">高低空繩索挑戰課程，
+                                        團隊建立課課程，戶外課程(溯溪、獨木舟、水戰槍、漆彈、、)，野外求生、生態體驗、山野訓練等戶外冒險活動課程規劃，自行車環湖(日月潭)，獨木舟、、、、等等課程。
+                                    </p>
+                                    <br>
+                                    <a href="#" class="btn btn-primary">了解課程</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- google map -->
+    <div class="container mt-5 ">
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <iframe width="100%" height="450"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.255693954764!2d121.4292471153791!3d25.059321343429072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a6331ddebef1%3A0xb151f6c588bf2c56!2z5rOw5bGx5bCx5qWt5pyN5YuZ6Ie6!5e0!3m2!1szh-TW!2stw!4v1667355857688!5m2!1szh-TW!2stw"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-sm-6">
+                <p>
+                <h3>泰山職業訓練場交通位置</h3>
+                泰山職業訓練場交通位置描述：位於明志科技大學校內，由工專路進入明志校內，沿明一路/泰山職訓中心路標而上，約800公尺。<br>
+
+                交通描述一： 公車、捷運<br>
+                1.公車：三重客運(637、638)、指南客運(797、798、801、858、880、883、1501、1503)，至明志科技大學站下車。<br>
+                2.新北市泰山區公車(泰山區579明志國小-台北車站)：至貴子路下車後，步行至貴子路口左轉明志路3段，明志路直行約100公尺至工專路右轉，再直行即可至明志科技大學。<br>
+                3.捷運：臺北捷運中和新蘆線至丹鳳站1號出口或桃園捷運機場線至泰山貴和站（明志科大）1號出口，再轉乘公車或騎乘YouBike微笑單車（約10~15分鐘）至明志科技大學。<br>
+                <br>
+                交通描述二：自行開車 <br>
+                1.高速公路五股交流道下(往新莊、泰山)，經新五路至新北大道右轉，直行至貴子路口右轉，貴子路直行至明志路左轉。於明志路繼續前行約100公尺右轉工專路，即可抵達明科技大學。<br>
+                2.由台北車站走忠孝橋，直行高架道路，下到平面道路之後直行至貴子路口右轉，貴子路直行至明志路左轉，於明志路繼續前行約100公尺右轉工專路，即可抵達明科技大學。<br>
+                3.明志科大「汽車」停車費30元/小時，請儘量搭乘大眾交通工具或機車(免停車費)。<br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- youtube -->
+    <div class="container mt-5 ">
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <h3>泰山職業訓練場交通位置</h3>
+                <p>
+                    勞動力發展署北分署林仁昭分署長表示，轄區各職業訓練場開辦多元化的職訓課程，
+                    提供失（待）業、轉職民眾培養技能、學習一技之長，並輔導考取證照提升就業競爭力，
+                    「泰山職業訓練場」110年度「PHP資料庫網頁設計」、「前端網頁開發技術」、「室內配線」、「智慧通訊聯網工程」等班別已陸續開放報名，歡迎失（待）業民眾逕上「台灣就業通」（https://www.taiwanjobs.gov.tw/）職訓課程專區報名，或電洽自辦訓練科（02）8995-6399#1257、泰山職訓場（02）2901-8274#2527、2530。
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <iframe width="100%" height="450" src="https://www.youtube.com/embed/SORD03t7nlo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- foolter -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark footer justify-content-center">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h4> 戶外探索教育機構 </h4>
+                <i class="fa-solid fa-phone"></i>02-8899-2260 <br>
+                <i class="fa-solid fa-envelope"></i>outlook@gmail.com</p>
+
+                Outdoor Exploration Enterprise Co., Ltd.
+            </div>
+
+        </div>
+
+
+    </nav>
+</body>
+
+</html>

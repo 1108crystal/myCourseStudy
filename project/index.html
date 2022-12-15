@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習-戶外探索教育機構</title>
+    <!-- 載入css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css"
+        integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #aboutMe,
+        .news01,
+        .news02,
+        .footer {
+            background-color: antiquewhite;
+        }
+
+        .nav-item{
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <!-- <div class="container-fluid p-2 bg-primary text-white text-center">
+        <h1>戶外用品</h1>
+        <p></p>
+    </div> -->
+    <!-- menu -->
+    <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark"> -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+
+        <div class="container-fluid text-center">
+            <a class="navbar-brand" href="#">
+                <i class="fa-brands fa-twitter"></i> 戶外探索教育機構
+                <!-- <img width="100" height="100" opacity=0 src="https://www.itsfun.com.tw/images/a2/1c/nBnauUjZzEmM0YWNxMmNzMmNhJWMwQ3Lt92Yuc2cthWcuw2cz5SMw9yL6MHc0RHa.jpg" alt="Kailas"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse justify-content-center " id="collapsibleNavbar">
+                <!--  mx-auto 置中-->
+                <ul class="nav navbar-nav ">
+                    <li  class="nav-item">
+                        <a class="nav-link" href="#aboutMe">關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">最新消息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Activity">活動影集</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#b1" role="button" data-bs-toggle="dropdown">場地設施</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#b1">多功能景觀會義室</a></li>
+                            <li><a class="dropdown-item" href="#b1">戶外繩索場地</a></li>
+                            <li><a class="dropdown-item" href="#b1">森林小木屋住宿區</a></li>
+                            <li><a class="dropdown-item" href="#b1">圓型景餐廳</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <!-- carousel button 只是器 -->
+        <!-- active 一開始顯示頁面 -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <!-- carousel-item 增加項目 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active ">
+
+                <img src="https://images.unsplash.com/photo-1527856263669-12c3a0af2aa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                    alt="Chicago" class="d-block" style="width: 100% ;height: 700px;;">
+                <div class="carousel-caption">
+                    <h3>Los Angeles</h3>
+                    <p>We had such a great time in LA!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1499803270242-467f7311582d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1973&q=80"
+                    alt="Los Angeles" class="d-block" style="width: 100% ;height: 700px; ">
+                <div class="carousel-caption">
+                    <h3>Chicago</h3>
+                    <p>Thank you, Chicago!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1584645530522-5de8caab591c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                    alt="New York" class="d-block" style="width: 100% ;height: 700px;;">
+                <div class="carousel-caption">
+                    <h3>New York</h3>
+                    <p>We love the Big Apple!</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!--img-fluid rounded-circle"  -->
+    <div class="container mt-5">
+        <div class="row text-center text-primary">
+            <div class="col-sm-6 ">
+                <img width="200px" height="200px"src="https://acct.org.tw/wp-content/uploads/2021/11/sliderF02.jpg"
+                    class="img-fluid rounded-circle" alt="Cinque Terre">
+            </div>
+            <div class="col-sm-6 ">
+                <img width="200px" height="200px" src="https://acct.org.tw/wp-content/uploads/2021/11/sliderB03-3.jpg"
+                    class=" img-fluid rounded-circle" alt="Cinque Terre">
+
+            </div>
+
+        </div>
+    </div>
+    <!-- icons  -->
+    <!-- bootstrap icons  -->
+    <!-- 最新消息 -->
+    <div class="container mt-5">
+        <div class="row text-center text-primary">
+            <div class="col-sm-6  my-icon">
+                <h3> <i class="fa-solid fa-bookmark"></i>&nbsp;&nbsp;教育中心防疫措施</h3>
+                <p class=" news01">
+                    配合嚴重特殊傳染性肺炎中央流行疫情指揮中心（以下簡稱指揮中心）10月24日公布11月7日起放寬之防疫政策，教育部及所屬機關主管場域之防疫措施，亦配合自11月7日起進行調整，並將配合修正各項防疫指引，調整方向說明如下：
+
+                    自11月7日起，無論是否完成疫苗追加劑均採「0+7自主防疫」。各級學校及幼兒園教職員工及學生因同住家人確診或同寢室室友確診，免居家隔離，均實施0+7自主防疫措施，自主防疫期間，如有症狀，不到校（班）上課、上班；自主防疫期間，如無症狀，且有兩日內快篩陰性結果，可到校（班）上課、上班。兒童課後照顧服務中心及短期補習班，比照辦理。
+                </p>
+            </div>
+            <div class="col-sm-6  my-icon ">
+                <h3> <i class="fa-solid fa-bookmark"></i>&nbsp;&nbsp;探索體驗教育企業引導師課程培訓班</h3>
+                <p class=" news02">
+                    探索/體驗教育的團隊活動訓練方式，近幾年來廣為各大企業及各式團體訓練之使用，有效地協助團隊與個人之發展及成長。2009年起探索教育推廣中心推出一系列探索教育引導員培訓班課程深受好評，獲得廣大的迴響。透過理論的了解及實務的帶領，推廣中心將體驗教育講師不易取得的完整Know
+                    how協助參與者學習，運用到各大公司訓練部門及非營利組織團隊，作為教育訓練安排的資源。
+                    參與對象：
+                    對於探索教育、講師有興趣想培育第二專長者之社會人士；對探索教育活動有興趣、曾參與類似培訓課程欲提升能力者。
+                    <br>
+                    <br>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- pic -->
+    <div class="container mt-5">
+        <div class="row text-center text-primary">
+            <div class="col-sm-4">
+
+                <img class="img-fluid"
+                    src="https://acct.org.tw/wp-content/uploads/2022/02/%E6%8A%80%E8%A1%93%E3%80%81%E5%88%86%E6%9E%90%E3%80%81%E5%95%86%E6%A5%AD-6701406-1024x512.jpg"
+                    alt="Cinque Terre">
+            </div>
+            <div class="col-sm-4">
+                <img class="img-fluid"
+                    src="https://camp.com.tw/wp-content/uploads/2022/10/2023camp-V1_page-0011-1024x576.jpg"
+                    alt="Cinque Terre">
+
+            </div>
+            <div class="col-sm-4">
+
+                <img class="img-fluid"
+                    src="https://acct.org.tw/wp-content/uploads/2021/11/skills-can-startup-3371153.jpg"
+                    alt="Cinque Terre">
+            </div>
+        </div>
+    </div>
+    <!-- card 1-->
+    <div class="container mt-5">
+        <div class="row  justify-content-center">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="https://scontent.ftpe7-2.fna.fbcdn.net/v/t39.30808-6/310967230_5875962302422040_813725836052798906_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=oFU1tbDSWVoAX95dyrQ&_nc_ht=scontent.ftpe7-2.fna&oh=00_AfD8I5BtR3VWV7ExideuCjp4j7NvJsPVkiUUR3C68S3HMA&oe=6368FD3F"
+                        alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">多元化的教具</h4>
+                        <p class="card-text">
+                            多元化的教具
+                            提供各類攜帶式教具，移動式低空、、等等，采風戶外探索持續不斷推廣體驗教育，不僅融入課程中，也提供訂購教具平台，讓每一位對體驗教育有興趣的夥伴們自己身邊就有教具能夠運用！
+                        </p><br>
+                        <a href="#" class="btn btn-primary">更多教具</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card ">
+                    <img src="https://acct.org.tw/wp-content/uploads/2021/11/DSC5086-%E5%A7%BB%E7%B7%A3%E8%B7%AF.jpg"
+                        alt="" class="card-img-top">
+                    <div class="card-body ">
+                        <h4 class="card-title">戶外課程</h4>
+                        <p class="card-text">
+                        <table>
+                            <tr>
+                                <td style="width:60% ;">高空繩索挑戰</td>
+                                <td style="width:40% ;">低空設施的團隊運作</td>
+                            </tr>
+                            <tr>
+                                <td style="width:60% ;">漆彈的角色分工</td>
+                                <td style="width:40% ;">攀岩的自然體驗</td>
+                            </tr>
+                            <tr>
+                                <td style="width:60% ;">溯溪的挑戰</td>
+                                <td style="width:40% ;">攀樹體驗</td>
+                            </tr>
+                            <tr>
+                                <td style="width:60% ;">獨木舟</td>
+                                <td style="width:40% ;">水彈對抗</td>
+                            </tr>
+                        </table>
+                        </p>
+                        <a href="#" class="btn btn-primary">更多資訊</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="https://scontent.ftpe7-1.fna.fbcdn.net/v/t39.30808-6/310652041_5875962199088717_2278041124639051308_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=C5Z4HAy0tGIAX8kb4By&_nc_ht=scontent.ftpe7-1.fna&oh=00_AfDkTuBw0X8reJz3ROrmYfXHdDCJdWikX8pO0OAjDMxJPg&oe=636824AE"
+                        alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">教育課程設計</h4>
+                        <p class="card-text">高低空繩索挑戰課程，
+                            團隊建立課課程，戶外課程(溯溪、獨木舟、水戰槍、漆彈、、)，野外求生、生態體驗、山野訓練等戶外冒險活動課程規劃，自行車環湖(日月潭)，獨木舟、、、、等等課程。</p>
+                        <br>
+                        <a href="#" class="btn btn-primary">了解課程</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- navbar -->
+    <div class="container mt-3 box" id="aboutMe">
+        <h3>關於我們</h3>
+        <p>
+            團隊是個有機體，就因為是有機體，所以會存在許多現有的科學、邏輯、管理理論無法預期的行為出現。這也就是管理大師和經營之神往往不是同一人的理論，因為，真實的面對人，尤其是一群人，往往不是只依靠理性就可以處理，但因為視團隊為有機體，就可以用生命準則來看一個團隊。　一個團隊和一個生命一樣，它會不斷的成長，可以是規模成長，也可以是能力成長，不再成長的生命自然就會萎縮，於是團隊對於成長的過程是老化還是新陳代謝，就會是個課題（growing）
+        <ul>
+
+            <il>采風戶外探索持續不斷推廣體驗教育，不僅融入課程中，也提供訂購教具平台，讓每一位對體驗教育有興趣的夥伴們自己身邊就有教具能夠運用！</il>
+            <il>關於采風的服務，我們提供各式的戶外及室內的挑戰活動，做為教育訓練的素材 !</il>
+            <il>體驗&探索教育. 高低空繩索挑戰課程. 團隊建立課課程. 戶外課程(溯溪、獨木舟、漆彈、、). 山野訓練等戶外冒險活動課程規劃執行。</il>
+            <il>師資培訓(體驗教育師資培訓、戶外冒險活動教練培訓、企業組織內部培訓等等)</il>
+            <il>【公益課程】每年辦理戶外安全課程，親近自然是一種學習，進行安全評估和風險管理更是一種必備技能！！</il>
+
+            </p>
+    </div>
+
+    <!--container  1-->
+    <div class="container mt-3">
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#contact"
+            style="width:200px">聯絡我們</button>
+        <div id="contact" class="collapse">
+            <p>
+            <h3>如有任何問題請與我們聯絡或留下訊息告訴我們，我們速與您聯絡!</h3>
+            <i class="fa-solid fa-phone"></i>02-8899-2260 <br>
+            <i class="fa-solid fa-envelope"></i> outlook@gmail.com<br>
+            </p>
+        </div>
+    </div>
+    <!--container  2 「活動影集」-->
+    <div class="container mt-3" id="Activity">
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#Activity01"
+            style="width:200px">活動影集</button>
+        <div id="Activity01" class="collapse">
+            <div class="row text-center text-primary">
+                <div class="col-sm-4">
+
+                    <img class="img-fluid" src="https://camp.com.tw/wp-content/uploads/2021/11/sliderA04.jpg"
+                        alt="Cinque Terre">
+                </div>
+                <div class="col-sm-4">
+                    <img class="img-fluid" src="https://camp.com.tw/wp-content/uploads/2021/11/sliderA05.jpg"
+                        alt="Cinque Terre">
+
+                </div>
+                <div class="col-sm-4">
+
+                    <img class="img-fluid"
+                        src="https://camp.com.tw/wp-content/uploads/2020/04/green-leafed-trees-during-fog-time-167684-768x512.jpg"
+                        alt="Cinque Terre">
+                </div>
+            </div>
+            <div class="row text-center text-primary">
+                <div class="col-sm-4">
+
+                    <img class="img-fluid" src="https://camp.com.tw/wp-content/uploads/2021/11/sliderB05-5.jpg"
+                        alt="Cinque Terre">
+                </div>
+                <div class="col-sm-4">
+                    <img class="img-fluid" src="https://camp.com.tw/wp-content/uploads/2021/11/sliderA05.jpg"
+                        alt="Cinque Terre">
+
+                </div>
+                <div class="col-sm-4">
+
+                    <img class="img-fluid" src="https://camp.com.tw/wp-content/uploads/2021/11/sliderF02.jpg"
+                        alt="Cinque Terre">
+                </div>
+            </div>
+            <div class="row text-center text-primary">
+                <div class="col-sm-4">
+
+                    <img class="img-fluid" src="https://camp.com.tw/wp-content/uploads/2021/11/sliderF04.jpg"
+                        alt="Cinque Terre">
+                </div>
+                <div class="col-sm-4">
+                    <img class="img-fluid" src="https://camp.com.tw/wp-content/uploads/2021/11/sliderE05.jpg"
+                        alt="Cinque Terre">
+
+                </div>
+                <div class="col-sm-4">
+
+                    <img class="img-fluid" src="https://camp.com.tw/wp-content/uploads/2021/11/sliderD01.jpg"
+                        alt="Cinque Terre">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- google map / youtube -->
+    <div class="container mt-5 ">
+        <div class="row">
+            <div class="col-sm-8">
+                <iframe width="100%" height="450"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.255693954764!2d121.4292471153791!3d25.059321343429072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a6331ddebef1%3A0xb151f6c588bf2c56!2z5rOw5bGx5bCx5qWt5pyN5YuZ6Ie6!5e0!3m2!1szh-TW!2stw!4v1667355857688!5m2!1szh-TW!2stw"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-sm-4">
+                <iframe width="100%" height="450" src="https://www.youtube.com/embed/SORD03t7nlo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="container mt-5 text-center footer">
+        <div class="row  r">
+            <div class="col-sm-12">
+                <h2>戶外探索教育機構 </h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
+                    class="fa-solid fa-phone"></i>02-8899-2260 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-envelope"></i>
+                outlook@gmail.com</p>
+            </div>
+            <div class="col-sm-8">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                 Outdoor Exploration Enterprise Co., Ltd.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

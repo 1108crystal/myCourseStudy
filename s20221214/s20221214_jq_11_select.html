@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 800px;
+            height: 50px;
+            background-color: lightpink;
+        }
+
+        .box2 {
+            width: 800px;
+            height: 200px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>elect change animate</h3>
+    <select name="" id="">
+        <option value="1">hide</option>
+        <option value="2">fade</option>
+        <option value="3">slide</option>
+    </select>
+    <hr>
+    <div class="box1"></div>
+    <div class="box2">
+        Hello
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        // text or html 
+        // input => val
+
+
+        $(function () {
+            
+
+            // 練習 select
+            // 1. hide show toggle
+            // 2. fade in fade out toggle
+            // 3. slide up / slide down toggle
+            // box1 => click 不消失
+            // box2
+
+            // 1.get select value
+            // let getSelectVal = $('select').val();
+            // console.log('getSelectVal', getSelectVal);
+
+            // 讀取 class=box2 給box2變數
+            const box2 = $('.box2');
+
+            // 當box1  click時 執行function 流程
+            $('.box1').click(function () {
+                console.log('box1 ok');
+                // 取select 的值 給變數getSelectVal
+                let getSelectVal = Number($('select').val());
+                console.log('getSelectVal', getSelectVal);
+                console.log('getSelectVal typeof', typeof (getSelectVal));
+
+                // 判斷 getSelectVal 的值， 分別作的事情
+                switch (getSelectVal) {
+                    case 1:
+                        // 
+                        box2.toggle(); //效果 -隱藏和顯示 show->hide  ;hide->show
+                        
+                        box2.text('hello hide');// box2 顯示hello hide
+                        break;
+                    case 2:
+                        box2.fadeToggle(2000);//效果 -淡入淡出(2000) fadeIn-fadeOut  ;fadeOut->fadeIn
+                        box2.text('hello fade');// box2 顯示hello hide
+                        break;
+                    case 3:
+                        box2.slideToggle(2000);//效果 -滑動(2000) slideDown->slideUp  ; slideUp->slideDown
+                        box2.text('hello slide');
+                        break;
+
+                    default:
+                        break;
+                }
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

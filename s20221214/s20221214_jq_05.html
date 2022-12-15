@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h3 id="myH3">Hello jquery</h3>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+
+
+
+
+    <button id="hideBtn">hide</button>
+    <button id="showBtn">show</button>
+    <button id="toggleBtn">togleBtn</button>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(function () {
+            $('#hideBtn').click(function () {
+                // $('p').hide();
+                $('p').hide(2000, function () {
+                    alert('hide執行完畢!');
+                })
+
+
+            })
+
+            //event on ('event',callback);
+            $('#showBtn').on('click',function () {
+            // $('#showBtn').click(function () {
+                $('p').show();
+            })
+
+            $('#toggleBtn').click(function () {
+                $('p').toggle();
+            })
+
+
+            $("p").click(function () {
+                $(this).
+                    hide
+                    (
+                        "slow"
+                    );
+            });
+
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h3 id="myH3">Hello jquery</h3>
+
+<p><input type="text" name="" id=""></p>
+<p><input type="text" name="" id=""></p>
+<p><input type="text" name="" id=""></p>
+<p><input type="text" name="" id=""></p>
+<p><input type="text" name="" id=""></p>
+
+
+
+<button >myBtn</button>        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+  
+        $(function () {
+            $('input').even().css('background-color','green');
+            //focus 進入
+            $('input').focus(function(){
+                //init all 取消紅色
+                $('input').css('background-color','');
+                //改變的結果
+                $(this).css('background-color','red');
+
+            })
+
+            //blur 離開
+            $('input').blur(function(){
+                $('input').css('background-color','');
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>

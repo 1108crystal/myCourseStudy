@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h3 id="myH3">Hello jquery</h3>
+
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro in ipsam voluptatum amet, accusantium aperiam
+        beatae hic itaque assumenda rem pariatur dolorum libero reprehenderit aliquam molestias officiis dignissimos
+        delectus quidem?</p>
+
+
+<button >刪除一個</button>        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        // const allP = document.querySelectorAll('p');
+        // console.log(allP);
+        // allP.forEach(element => {
+        //     element.addEventListener('click',function(value,key){
+        //         this.style.color = 'blue';
+
+        //     })
+        // });
+
+        $(function () {
+            $('p').click(function () {
+                $(this).hide();
+                console.log('this', this);
+                console.log('$(this)', $(this));
+            });
+
+            $('button').click(function(){
+                $('p').first().remove(); //jq 刪除第一個物件的內容               
+                $('p').last().remove();//jq 刪除最後一個物件的內容
+                // $('p').eq(num).remove();//jq 刪除指定 物件 的內容
+                $('p').eq(0).remove();//jq 刪除指定index[0] 物件 的內容
+                // $('p').hide();
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>

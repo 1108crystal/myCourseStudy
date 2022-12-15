@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            background-color: lightpink;
+            width: 800px;
+            height: 30px;
+        }
+
+        .box2 {
+            background-color: lightskyblue;
+            width: 800px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3 id="myH3">Hello jquery</h3>
+
+    <div class="box1">
+
+    </div>
+
+    <div class="box2">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, dolorum. Deserunt, commodi at. Tenetur,
+            in? Quas, nam porro eligendi sit nisi quibusdam fugit eum, sapiente adipisci illo accusantium, fugiat
+            libero.
+    </div>
+
+
+ <button type="button" id="slideUpBtn">slideUpBtn</button>
+    <button type="button" id="slideDownBtn">slideDownBtn</button>
+    <button type="button" id="slideToggleBtn">slideToggleBtn</button>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        
+        $(function () {
+            $('.box1').click(function () {
+                $('.box2').slideToggle();
+            });
+            //jquery methon chain
+            $('#slideUpBtn').click(function () {
+                // $('.box2').css("color","red").slideUp(2000).slideDown(2000).slideUp(2000).slideDown(2000);
+
+                $('.box2').slideUp(2000,function(){
+                    $('.box2').css("color","red");
+                }).slideDown(2000,function(){
+                    $('.box2').css("color","blue");
+                }).slideUp(2000,function(){
+                    $('.box2').css("color","green");
+                    
+                }).slideDown(2000,function(){
+                    $('.box2').css("color","purple");
+                });
+                
+
+            });
+
+            $('#slideDownBtn').click(function () {
+                $('.box2').slideDown(3000,function(){
+                    alert('收費1000')
+                });
+            });
+            $('#slideToggleBtn').click(function () {                
+                $('.box2').slideToggle();
+            });
+        })
+
+    </script>
+</body>
+
+</html>
