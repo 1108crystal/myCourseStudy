@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+            font-size: 20px;
+        
+        }
+        .blue{
+            color: blue;
+            font-size: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>jquery html</h3>
+
+    <hr>
+    <h3>JS</h3>
+    <button type="button" id="JsBtn" onclick="JsBtn();">JsBtn</button>
+    <p id="pJs" >Hello Js</p>
+    
+    <hr>
+    <h3>JQ</h3>
+    <button type="button" id="JqBtn">JsBtn</button>
+    <button type="button" id="JqremCBtn">removeClass</button>
+    <p id="pJq" >Hello Jq</p>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function JsBtn() {
+            //js
+            const pJs = document.getElementById('pJs');
+            console.log(pJs.className);
+            if(pJs.className=="blue"){
+                pJs.className="red";
+            }else{
+                pJs.className="blue";
+            }
+            // pJs.className="blue";
+            // pJs.style.color="red";
+            // pJs.style.fontSize="30px";
+
+        }
+
+
+        $(function () {
+            //js
+            const pJs = document.getElementById('pJs');
+            //jq
+            const pJq = $('#pJq');
+
+            pJs.innerText = 'Change js';
+            pJq.text('change jq');
+
+
+            $('#JqBtn').click(function () {
+                console.log(pJq.className);
+                if(pJq.className=="red"){
+                    // pJq.css({ "color": "black", "background-color": "yellow", "font-size": "28px", });
+                    pJq.toggleClass('blue');    
+                }else
+                {
+                    pJq.toggleClass('red');    
+                }
+            })
+            $('#JqremCBtn').click(function () {
+                pJq.toggleClass('blue');
+
+            })
+        })
+
+    </script>
+</body>
+
+</html>
