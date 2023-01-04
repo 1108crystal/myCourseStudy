@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get json</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        div {
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid #ccc;
+            width: 30vh;
+            height: 50vh;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="" method="get" id="myForm">
+
+            <p>
+                <input type="submit" value="submit">
+            </p>
+
+            <p id="myP">
+
+            </p>
+
+        </form>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(function () {
+            const myForm = $('#myForm');
+            const myP = $('#myP');
+            // 
+            myForm.submit(function (event) {
+;
+                //preventDefault() //不要讓我的submit 送出
+                event.preventDefault();  
+                console.log('OK');
+                $.getJSON("./myjson.json",function (data,textStatus, jqXHR){
+                    myP.load("./myjson.json");
+                    console.log('data',data);
+                    console.log("data.firstName",data.firstName);
+                    console.log("data.lastName",data.lastName);
+                    console.log("data.sex",data.sex);
+                    console.log("data.address",data.address);
+                    console.log("data.address.streetAddress",data.address.streetAddress);
+
+
+                })
+
+
+
+            });
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>
