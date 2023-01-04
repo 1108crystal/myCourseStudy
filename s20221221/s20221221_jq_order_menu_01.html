@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq order MENU</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        table,
+        tr,
+        td {
+            text-align: center;
+            border: 1px solid lightgrey;
+        }
+
+
+
+        .cal {
+            width: 300px;
+            text-align: left;
+
+        }
+
+        .s1 {
+            color: darkred;
+            font-size: 16px;
+        }
+
+        .s2 {
+            color: blue;
+            font-size: 16px;
+        }
+
+        #total,
+        #price,
+        #cash {
+            border-style: none;
+            text-align: center;
+            ;
+        }
+
+        .styCash {
+            font-size: 20px;
+            font-weight: bold;
+            background-color: lightcoral;
+
+        }
+
+        input[type="Number"] {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>泰山職訓中心 menu 訂購單</h1>
+    <hr>
+
+    <table>
+        <tr>
+            <td>圖片</td>
+            <td>品名</td>
+            <td>價格</td>
+            <td>數量</td>
+            <td>小計</td>
+        </tr>
+        <tr>
+            <td><img src="https://ihealth.bwnet.com.tw/CT_Column/2020/05/a9c67d5a-3ff7-8c19-dacb-96aaa9e3a3e1_620.jpg"
+                    alt=""></td>
+            <td><label for="" id="pro_name" name="proname" value="火腿蛋餅">火腿蛋餅</label></td>
+            <td><input type="number" id="price_01" name="price" maxlength="3" Value="35" readonly></td>
+            <td><input class="myqty" type="number" id="qty_01" name="qty" value="0" maxlength="3"></td>
+            <td>
+                <input type="number" id="total_01" name="total" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="https://cc.tvbs.com.tw/img/program/upload/2018/10/09/20181009193602-a9ac5f8a.jpg" alt=""></td>
+            <td><label for="" id="pro_name" name="proname" value="肉蛋士司">肉蛋士司</label></td>
+            <td><input type="number" id="price_02" name="price" maxlength="3" value="45" readonly></td>
+            <td><input class="myqty" type="number" id="qty_02" name="qty" value="0" maxlength="3"></td>
+            <td>
+                <input type="number" id="total_02" name="total" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="https://www.starbucks.com.tw/common/objects/images/product/20211001142841860.jpg" alt=""></td>
+            <td><label for="" id="pro_name" name="proname" value="紅茶(大)">紅茶(大)</label></td>
+            <td><input type="number" id="price_03" name="price" maxlength="3" value="25" readonly></td>
+            <td><input class="myqty" type="number" id="qty_03" name="qty" value="0" maxlength="3"></td>
+            <td>
+                <input type="number" id="total_03" name="total" readonly>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td colspan="4">小 計</td>
+
+            <td>
+                <div id="total_SUM"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4">優惠折扣</td>
+
+            <td>
+                <input  class="myDisc" type="number" id="Discount" ame="Discount" maxlength="1" min="0" max="9">折
+            </td>
+        </tr>
+        <tr class="styCash">
+            <td colspan="4">應收金額</td>
+
+            <td>
+                <div id="cash"></div>
+
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <p id="demo"></p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        //jq
+        $(function () {
+            const price_01 = $('#price_01');
+            const price_02 = $('#price_02');
+            const price_03 = $('#price_03');
+
+            const qty_01 = $('#qty_01');
+            const qty_02 = $('#qty_02');
+            const qty_03 = $('#qty_03');
+
+            const total_01 = $('#total_01');
+            const total_02 = $('#total_02');
+            const total_03 = $('#total_03');
+
+            const total_SUM = $('#total_SUM');
+            const Discount = $('#Discount');
+            const cash = $('#cash');
+
+            const myqty = $(".myqty");
+            const myDisc = $(".myDisc");
+
+            function changeQty() {
+                qty_01.val(Number(qty_01.val()));
+                qty_02.val(Number(qty_02.val()));
+                qty_03.val(Number(qty_03.val()));
+                
+                total_01.val(Number(price_01.val()) * Number(qty_01.val()));
+                total_02.val(Number(price_02.val()) * Number(qty_02.val()));
+                total_03.val(Number(price_03.val()) * Number(qty_03.val()));
+
+                
+                sumTotal();
+            }
+            function sumTotal() {
+        
+                total_SUM.text((Number(total_01.val()) + Number(total_02.val()) + Number(total_03.val())));
+                cashTotal();
+
+            }
+            function cashTotal() {
+                
+                if(Discount.val() == ''){
+                    
+                    cash.text(total_SUM.text());
+                }else{
+                    
+                    cash.text(Math.round(Number(total_SUM.text()) * Number(Discount.val()) / 10, 0));
+
+                }
+
+            }
+
+            changeQty();
+
+            myqty.change(function () {
+                changeQty();
+            })
+            myDisc.change(function () {
+                cashTotal();
+            })
+
+        })
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

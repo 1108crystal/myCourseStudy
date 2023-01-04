@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+    <input class="myqty" type="number" id="qtyID" name="qty" value="0" maxlength="3">
+    <input class="myqty" type="number" id="qtyID" name="qty" value="1" maxlength="3">
+    <input class="myqty" type="number" id="qtyID" name="qty" value="2" maxlength="3">
+    
+<input class="myqty" type="number" id="qtyID" name="qty" value="3" maxlength="3">
+<input class="myqty" type="number" id="qtyID" name="qty" value="4" maxlength="3">
+<input class="myqty" type="number" id="qtyID" name="qty" value="5" maxlength="3">
+
+<p>Click the list items to get the index position, relative to its sibling elements</p>
+
+<ul>
+  <li>Coffee</li>
+  <li>Milk</li>
+  <li>Soda</li>
+</ul>
+
+
+
+<input class="myqty" type="number" id="qtyID" name="qty" value="6" maxlength="3">
+<input class="myqty" type="number" id="qtyID" name="qty" value="7" maxlength="3">
+<input class="myqty" type="number" id="qtyID" name="qty" value="8" maxlength="3">
+<ul>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Soda</li>
+  </ul>
+  
+<!-- jq  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $("li").click(function(){
+    console.log($(this).index());
+    
+  });
+
+
+  const qty=$("input[name='qty']");
+  const qtyID=$("#qtyID");
+  const myqty=$(".myqty");
+  const allInput=$(":input");
+
+  myqty.click(function(){
+
+    // console.log($(this).index());
+
+
+  });
+
+  allInput.click(function () {
+                // console.log('$(this)', $(this));
+                // console.log('this', this);
+                let getIndex = allInput.index(this);
+                console.log('getIndex', getIndex);
+            })
+
+
+/*
+  $("input[name='qty']").click(function(){
+    console.log($("input[name='qty']"));
+    alert($("input[name='qty']").index());
+
+  });
+
+  $("#qtyID").click(function(){
+    console.log($("#qtyID"));
+    alert($(this).index());
+
+  });
+
+  $(".myqty").click(function(){
+    console.log($(".myqty"));
+    console.log($(this).index());
+
+  });
+
+*/  
+});
+</script>
+</body>
+</html>

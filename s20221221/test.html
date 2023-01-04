@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        
+        
+        
+        $(document).ready(function () {
+        function getNameValues(){
+        alert($("[name='n1']").val());
+        }
+        
+        function getIdValues(){
+        alert($("#i1").val())
+        }
+        
+        function getClassValues(){
+        alert($(".c1").val());
+        }                      
+        
+        });
+</script>
+    </head>
+    <body>
+        <input type="text" name="n1" value="name">
+        <input type="button" onclick="getNameValues()" value="對name取值"> </br>
+        <input type="text" id="i1" value="id">
+        <input type="button" onclick="getIdValues()" value="對id取值"> </br>
+        <input type="text" class="c1" value="class">
+        <input type="button" onclick="getClassValues()" value="對class取值"> </br>
+    </body>
+</html>
