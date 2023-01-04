@@ -6,16 +6,14 @@ function dd($data)
     echo '</pre>';
 }
 
-$data = $_GET;
-// $data = $_POST;
-// $data = $_POST;
+$data = $_POST;
 
 $num1 = $data['num1'];
 $num2 = $data['num2'];
-$option = $data['option'];
+$math = $data['math'];
 $result = 0;
 
-switch ($option) {
+switch ($math) {
     case '+':
         $result = $num1 + $num2;
         break;
@@ -30,7 +28,7 @@ switch ($option) {
         break;
 
     default:
-        $result = "option 請輸入+ - * /";
+        $result = " 請輸入+ - * /";
         break;
 }
 
@@ -41,10 +39,14 @@ switch ($option) {
 $myArr = [
     'num1' => $num1,
     'num2' => $num2,
+    'math' => $math,
     'result' => $result,
 ];
 // dd($myArr);
+
 echo json_encode($myArr);
-    // echo "123";
-    // $age = array("Peter"=>35, "Ben"=>37, "Joe"=>43);
-    // echo json_encode($data);
+
+// echo "1234";
+//     // echo "123";
+//     // $age = array("Peter"=>35, "Ben"=>37, "Joe"=>43);
+//     echo json_encode($data);

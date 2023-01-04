@@ -64,7 +64,7 @@
 
                 // ajax start
                 $.ajax({
-                    url: "sumData.php",
+                    url: "sumData01.php",
                     type: "post",
                     data: values,
                     dataType: 'json',
@@ -74,7 +74,7 @@
                         console.log('res.num2', res.num2);
                         console.log('res.result', res.result);
                         myP.text(res.num1 +  res.math  + res.num2 + '=' + res.result)
-
+                        
                         // You will get response from your PHP page (what you echo or print)
                     },
                     // error: function (jqXHR, textStatus, errorThrown) {
