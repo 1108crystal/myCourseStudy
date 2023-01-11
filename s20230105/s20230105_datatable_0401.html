@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datatable</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+    <style>
+        table,
+        thead,
+        tr,
+        td,
+        tfoot {
+            border: 1px lightskyblue solid;
+        }
+    </style>
+</head>
+
+<body onload="shwoData()">
+    <div id="listData">
+        <h1>觀光工廠</h1>
+    </div>
+    <hr>
+    <table id="table_id" class="display" style="width:100% ">
+        <!-- <thead>
+            <tr>
+                <th>title</th>
+                <th>address</th>
+                <th>features</th>
+                <th>tel</th>
+            </tr>
+        </thead> -->
+        <tbody id="myData">
+
+        </tbody>
+        <!-- <tfoot>
+            <tr>
+                <th>title</th>
+                <th>address</th>
+                <th>features</th>
+                <th>tel</th>
+            </tr>
+        </tfoot> -->
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+    <script>
+        const myHead = $('thead');
+        const myData = $('#myData');
+        const myFoot = $('tfoot');
+        const head = '';
+
+        function shwoData() {
+
+            $.ajax({
+                url: "./js/response_1672889083926.json",
+                type: "get",
+                dataType: 'json',
+                success: function (res) {
+                    console.log('res', res);
+
+                    $.each(res, function (key, value) {
+                        // ----------標題------------//
+
+                        if (key == 0 ) {
+                            
+                            myHead.append(` <thead>`);
+                            myHead.append(` <tr>`);
+                            $.each(value, function (key, vs) {
+                                myHead.append( ` <th> ${key} </th>`);
+                            })
+                            myHead.append(`</tr>`);
+                            myHead.append(` </thead>`);
+                        }
+                        // ----------內容------------//
+                        listData = listData + ` <tr>`;
+                        $.each(value, function (key, vs) {
+                            listData = listData + ` <td>${vs}</td>`;
+                        })
+                        listData = listData + `</tr>`;
+                        // ----------頁尾------------//
+                       
+                        if (key == res.length-1) {
+                            myFoot.append(` <tfoot>`);
+                            myFoot.append(`  <tr>`);
+                            $.each(value, function (key, vs) {
+                                myFoot.append( ` <th>${key}</th>`);
+                            })
+                            myFoot.append(`    </tr>`);
+                            myFoot.append(` </tfoot>`);
+
+                        }
+                    });
+
+
+
+                    //顯示到網頁上
+                    myData.append(listData);
+
+                    $('#table_id').DataTable();
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('jqXHR', jqXHR);
+                    console.log('textStatus', textStatus);
+                    console.log('errorThrown', errorThrown);
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>
