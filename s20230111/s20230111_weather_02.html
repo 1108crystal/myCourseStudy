@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+</head>
+
+<body>
+    <h3>天氣預報資料</h3>
+    <ul id="myUl">
+
+    </ul>
+
+    <button id="myBtn">Print</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script>
+        // 政府開放平台 太多人同時使用 把我們暫時封鎖
+        // https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=rdec-key-123-45678-011121314
+
+        // https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-C0ECFB19-DA53-46EF-BC76-146F83535780
+
+        $(function () {
+
+            const myUl = $('#myUl');
+            const myBtn = $('#myBtn');
+
+            myBtn.click(function () {
+                window.print();
+            });
+
+
+            // ajax 範本
+            $.ajax({
+                url: "./js/response_1672900071071.json",
+                type: "get",
+                dataType: 'json',
+                success: function (res) {
+                    console.log('res', res);
+                    let data = res.records.location;
+                    console.log('data', data);
+                    console.log('data typeof', typeof (data));
+
+
+
+                    let textContext = `
+                            練習二  取得澎湖 連江縣的 object 與locationName
+                            練習三  取得澎湖 連江縣的 最高 最低溫
+
+                            <HR>
+                            
+                            <li>
+                                ${data[19].locationName}
+                                ${data[19].weatherElement[0].time[0]['endTime']} ~ ${data[19].weatherElement[0].time[0]['startTime']} 
+                                ${data[19].weatherElement[0].time[0]['parameter']['parameterName']} 
+                                最高溫 : ${data[19].weatherElement[2].time[0]['parameter']['parameterName']} C
+                                最低溫 : ${data[19].weatherElement[4].time[0]['parameter']['parameterName']} C
+                            </li>
+                            <li>
+                                ${data[21].locationName}
+                                ${data[21].weatherElement[0].time[0]['endTime']} ~ ${data[21].weatherElement[0].time[0]['startTime']} 
+                                ${data[21].weatherElement[0].time[0]['parameter']['parameterName']} 
+                                最高溫 : ${data[21].weatherElement[2].time[0]['parameter']['parameterName']} C
+                                最低溫 : ${data[21].weatherElement[4].time[0]['parameter']['parameterName']} C
+                            </li>
+                            <hr>
+                        `;
+                    myUl.append(textContext);
+
+
+
+
+                    textContext = `
+                        練習四  所有縣市的的 object 與locationName 第一時間的 最高 最低溫 
+<HR>`;
+                    $.each(data, function (key, value) {
+                        console.log(key);
+                        console.log(value.locationName);
+
+
+                        console.log(value.weatherElement[0].time[0]['endTime'] + '~' + value.weatherElement[0].time[0]['startTime'] + value.weatherElement[0].time[0]['parameter']['parameterName']);
+
+
+
+                        textContext = `
+
+                            
+                            <li>
+                                ${key + 1} ${value.locationName}
+                                ${value.weatherElement[0].time[0]['startTime']} ~ ${value.weatherElement[0].time[0]['endTime']} 
+                                ${value.weatherElement[0].time[0]['parameter']['parameterName']} 
+                                最高溫 : ${value.weatherElement[2].time[0]['parameter']['parameterName']} C
+                                最低溫 : ${value.weatherElement[4].time[0]['parameter']['parameterName']} C
+                            </li>
+                        `;
+                        myUl.append(textContext);
+                    });
+                    ;
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+                }
+            });
+            // ajax end
+        });
+
+
+    </script>
+</body>
+
+</html>

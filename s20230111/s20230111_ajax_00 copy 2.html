@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datatable</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+
+<body onload="shwoData()">
+    <h1> 請點選您要查詢的資料:</h1>
+
+    <div>
+        <button onclick="shwoData('./js/youBike.json','youBiKe站點');">youBiKe站點</button>
+        <button onclick="shwoData('./js/Touristfactory.json','新北市光觀工廠');">新北市光觀工廠</button>
+    </div>
+    <hr>
+    <hr>
+    <h1 id="head"></h1>
+    <div id="showdata">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+
+        const HeadDIV = $('#head');
+        const myshowdata = $('#showdata');
+        const head = '';
+
+
+
+        function shwoData(file, str) {
+            let listData = "";
+            HeadDIV.text('');
+            myshowdata.html('');
+
+
+            $.ajax({
+                url: file,
+                type: "get",
+                dataType: 'json',
+                success: function (res) {
+                    console.log('res', res);
+                    HeadDIV.text(str);
+                    $.each(res, function (key, value) {
+                        // ----------標題------------//
+
+                        if (key == 0) {
+                            console.log('value', value);
+                            myshowdata.append(` <table class="table table-striped" id="example" class="display" style="width:100%">`);
+                            myshowdata.append(` <thead>`);
+                            myshowdata.append(` <tr>`);
+                            $.each(value, function (key, vs) {
+                                console.log('key', key);
+                                console.log('vs', vs);
+
+                                myshowdata.append(` <th> ${key} </th>`);
+                            })
+                            myshowdata.append(`</tr>`);
+                            myshowdata.append(` </thead>`);
+                        }
+                        // ----------內容------------//
+                        listData = listData + ` <tr>`;
+                        $.each(value, function (key, vs) {
+                            listData = listData + ` <td>${vs}</td>`;
+                        })
+                        listData = listData + `</tr>`;
+                        //顯示到網頁上
+                        myshowdata.append(listData);
+                        // ----------頁尾------------//
+
+                        if (key == res.length - 1) {
+                            myshowdata.append(` <tfoot>`);
+                            myshowdata.append(`  <tr>`);
+                            $.each(value, function (key, vs) {
+                                myshowdata.append(` <th>${key}</th>`);
+                            })
+                            myshowdata.append(`    </tr>`);
+                            myshowdata.append(` </tfoot>`);
+
+                        }
+                    });
+                    myshowdata.append(` </table>`);
+
+
+
+
+
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('jqXHR', jqXHR);
+                    console.log('textStatus', textStatus);
+                    console.log('errorThrown', errorThrown);
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>
